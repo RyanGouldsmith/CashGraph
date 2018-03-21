@@ -3,19 +3,16 @@ const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const { makeExecutableSchema } = require('graphql-tools');
 
-const schemaTypeDefs = require('./schemas');
-
-const SchemaDefinition = `schema {
-  query: Person
-}`;
-
-const Root = `type Person {
-  name: String
-}`;
+const { SchemaDefinition, Query, Schemas } = require('./schemas');
+const { QueryResolvers } = require('./resolvers');
 
 const schema = makeExecutableSchema({
-  typeDefs: [SchemaDefinition, Root, ...schemaTypeDefs],
-  resolvers: {},
+  typeDefs: [SchemaDefinition, Query, ...Schemas],
+  resolvers: {
+    Query: {
+      ...QueryResolvers,
+    },
+  },
 });
 
 const app = express();

@@ -1,7 +1,17 @@
-export const Person = `
+const Person = `
   type Person {
     name: String
   }
 `;
 
-export default [Person];
+export const Query = `
+  type Query {
+    person: [Person]
+  }
+`;
+
+export const SchemaDefinition = `schema {
+  query: Query
+}`;
+
+export const Schemas = [Person];
