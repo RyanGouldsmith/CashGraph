@@ -1,4 +1,4 @@
-import { PersonResolver } from './person';
+import { UserResolver } from './user';
 import { TagResolver } from './tag';
 
-export const QueryResolvers = Object.assign({}, PersonResolver, TagResolver);
+export const QueryResolvers = Object.assign({}, UserResolver, TagResolver);

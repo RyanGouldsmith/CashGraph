@@ -1,5 +1,5 @@
-export const Person = `
-  type Person {
+export const User = `
+  type User {
     name: String
     email: String
   }
