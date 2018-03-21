@@ -1,10 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
-const { makeExecutableSchema } = require('graphql-tools');
+import express from 'express';
+import bodyParser from 'body-parser';
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
 
-const { SchemaDefinition, Query, Schemas } = require('./schemas');
-const { QueryResolvers } = require('./resolvers');
+import { SchemaDefinition, Query, Schemas } from './schemas';
+import { QueryResolvers } from './resolvers';
 
 const schema = makeExecutableSchema({
   typeDefs: [SchemaDefinition, Query, ...Schemas],

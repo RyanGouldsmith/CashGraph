@@ -1,9 +1,4 @@
-const PersonResolver = {
-  person() {
-    return [{
-      name: 'person 1',
-    }];
-  },
-};
+import { PersonResolver } from './person';
+import { TagResolver } from './tag';
 
-export const QueryResolvers = Object.assign({}, PersonResolver);
+export const QueryResolvers = Object.assign({}, PersonResolver, TagResolver);

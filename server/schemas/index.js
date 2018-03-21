@@ -1,13 +1,18 @@
-const { Person } = require('./person');
+import { Person } from './person';
+import { Tag, AllowedTagName, AllowedColour } from './tag';
 
 export const Query = `
   type Query {
-    person: [Person]
+    persons: [Person]
+    person(email: String): Person!
+    tags: [Tag]
+    tag(name: AllowedTagName): Tag!
   }
 `;
 
 export const SchemaDefinition = `schema {
   query: Query
-}`;
+}
+`;
 
-export const Schemas = [Person];
+export const Schemas = [Person, AllowedTagName, AllowedColour, Tag];
