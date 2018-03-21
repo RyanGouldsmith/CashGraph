@@ -1,8 +1,4 @@
-const Person = `
-  type Person {
-    name: String
-  }
-`;
+const { Person } = require('./person');
 
 export const Query = `
   type Query {
