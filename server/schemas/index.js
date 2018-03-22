@@ -1,5 +1,6 @@
 import { User } from './user';
 import { Tag, AllowedTagName, AllowedColour } from './tag';
+import { Spending } from './spending';
 
 export const Query = `
   type Query {
@@ -7,6 +8,7 @@ export const Query = `
     user(email: String): User!
     tags: [Tag]
     tag(name: AllowedTagName): Tag!
+    spending(userId: Int): Spending
   }
 `;
 
@@ -15,4 +17,4 @@ export const SchemaDefinition = `schema {
 }
 `;
 
-export const Schemas = [User, AllowedTagName, AllowedColour, Tag];
+export const Schemas = [User, AllowedTagName, AllowedColour, Tag, Spending];
