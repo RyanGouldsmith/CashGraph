@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot containing tags and spending 1`] = `
+<div>
+  <h1>
+    Cash Graph Dashboard
+  </h1>
+  <main
+    class="dashboard"
+  >
+    <div
+      class="tags"
+    >
+      <h1>
+        The tags are: 
+      </h1>
+      <p
+        class="tags__loading"
+      >
+        Loading...
+      </p>
+    </div>
+    <section
+      class="spending"
+    >
+      <h1>
+        Spending ... 
+      </h1>
+      <p
+        class="spending__loading"
+      >
+        Loading Spending
+      </p>
+      <p>
+        Total Spending is £0
+      </p>
+    </section>
+  </main>
+</div>
+`;

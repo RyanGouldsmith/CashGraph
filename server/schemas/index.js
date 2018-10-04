@@ -8,7 +8,7 @@ export const Query = `
     user(email: String): User!
     tags: [Tag]
     tag(name: AllowedTagName): Tag!
-    spending(userId: Int): Spending
+    spending(userId: Int): [Spending]
   }
 `;
 

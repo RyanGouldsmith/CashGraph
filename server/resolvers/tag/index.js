@@ -1,11 +1,13 @@
-const tags = [{
-  name: 'HOLIDAY',
-  colour: 'GREEN',
-}, {
-  name: 'ENTERTAINMENT',
-  colour: 'BLUE',
-}];
-
+const tags = [
+  {
+    name: 'HOLIDAY',
+    colour: 'GREEN',
+  },
+  {
+    name: 'ENTERTAINMENT',
+    colour: 'BLUE',
+  },
+];
 
 export const TagResolver = {
   tags() {
