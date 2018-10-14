@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
-import Tags from '../tags/tags';
-import Spending from '../spending/spending';
+import { Tags } from '../tags/tags';
+import { Spending } from '../spending/spending';
 
 export function Dashboard() {
   return (
@@ -9,7 +9,7 @@ export function Dashboard() {
       <h1>Cash Graph Dashboard</h1>
       <main className="dashboard">
         <Tags />
-        <Spending />
+        <Spending limit={2} />
       </main>
     </React.Fragment>
   );

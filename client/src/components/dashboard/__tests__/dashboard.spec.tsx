@@ -14,6 +14,7 @@ const mocks = [
   {
     request: {
       query: GetSpendingQuery,
+      variables: { limit: 1 },
     },
     result: {
       data: {

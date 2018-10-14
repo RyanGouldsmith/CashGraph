@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { graphql } from 'react-apollo';
-import { SpendingQuery, SpendingType } from './spending-types';
+import React from 'react';
+import { Query } from 'react-apollo';
+import { SpendingType } from './spending-types';
 import { GetSpendingQuery } from './spending-query';
-
-const Spending = graphql<{}, SpendingQuery>(GetSpendingQuery);
 
 const totalSpending = (spendings: Array<SpendingType>): number => {
   return spendings.reduce((acc, curr) => {
@@ -11,16 +9,25 @@ const totalSpending = (spendings: Array<SpendingType>): number => {
   }, 0.0);
 };
 
-export default Spending(({ data }) => {
-  const { loading, spending = [] } = data;
+export const Spending: React.SFC<{ limit: Number }> = ({ limit }) => {
   return (
-    <section className="spending">
+    <React.Fragment>
       <h1>Spending ... </h1>
-      {loading && <p className="spending__loading">Loading Spending</p>}
-      <p>{`Total Spending is £${totalSpending(spending)}`}</p>
-      {spending.map(item => {
-        return <p className="spending__title">{item.title}</p>;
-      })}
-    </section>
+      <Query query={GetSpendingQuery} variables={{ limit }}>
+        {({ loading, data: { spending } }) => {
+          if (loading) return <p className="spending__loading">Loading Spending</p>;
+          return (
+            <section className="spending">
+              <p>{`Total Spending is £${totalSpending(spending)}`}</p>
+              {spending.map((item: SpendingType) => {
+                return <p className="spending__title">{item.title}</p>;
+              })}
+            </section>
+          );
+        }}
+      </Query>
+    </React.Fragment>
   );
-});
+};
+
+export default Spending;

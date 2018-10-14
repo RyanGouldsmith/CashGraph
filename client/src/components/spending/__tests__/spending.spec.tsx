@@ -1,27 +1,24 @@
 import 'babel-polyfill';
-import * as React from 'react';
-import * as TestLibrary from 'react-testing-library';
-import * as ApolloTestUtils from 'react-apollo/test-utils';
+import React from 'react';
+import { render, cleanup } from 'react-testing-library';
+import { MockedProvider } from 'react-apollo/test-utils';
 import { wait } from 'react-testing-library';
 
 import Spending from '../spending';
 import { GetSpendingQuery } from '../spending-query';
-
-const { render, cleanup } = TestLibrary;
-const { MockedProvider } = ApolloTestUtils;
 
 afterEach(cleanup);
 const mocks = [
   {
     request: {
       query: GetSpendingQuery,
+      variables: {
+        limit: 1,
+      },
     },
     result: {
       data: {
-        spending: [
-          { title: 'testSpendingTitle', price: 3.0 },
-          { title: 'anotherSpendingTitle', price: 7.0 },
-        ],
+        spending: [{ title: 'testSpendingTitle', price: 3.0 }],
       },
     },
   },
@@ -30,12 +27,12 @@ const mocks = [
 test('should render the spending text', async () => {
   const { queryByText } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Spending />
+      <Spending limit={1} />
     </MockedProvider>,
   );
 
   await wait(() => {
-    const spendingTextNode = queryByText('Total Spending is £10');
+    const spendingTextNode = queryByText('Total Spending is £3');
     expect(spendingTextNode).not.toBeNull();
   });
 });
@@ -43,23 +40,21 @@ test('should render the spending text', async () => {
 test('should render two spending items', async () => {
   const { queryByText } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Spending />
+      <Spending limit={1} />
     </MockedProvider>,
   );
 
   await wait(() => {
     const firstSpendingTitleNode = queryByText('testSpendingTitle');
-    const secondSpendingTitleNode = queryByText('anotherSpendingTitle');
 
     expect(firstSpendingTitleNode).not.toBeNull();
-    expect(secondSpendingTitleNode).not.toBeNull();
   });
 });
 
 test('should render the loading when loading data', async () => {
   const { container } = render(
     <MockedProvider mocks={[]}>
-      <Spending />
+      <Spending limit={1} />
     </MockedProvider>,
   );
 

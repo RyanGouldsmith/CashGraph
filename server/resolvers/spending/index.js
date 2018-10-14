@@ -46,7 +46,7 @@ const spendings = [
 ];
 
 export const SpendingResolver = {
-  spending(_, { userId }) {
-    return spendings.filter(spending => spending.person.id === userId);
+  spending(_, { userId, limit }) {
+    return spendings.filter(spending => spending.person.id === userId).slice(0, limit);
   },
 };

@@ -1,8 +1,10 @@
 export interface TagsQuery {
-  tags: Array<{
-    name: TagValues;
-    colour: TagColours;
-  }>;
+  tags: Array<TagType>;
+}
+
+export interface TagType {
+  name: TagValues;
+  colour: TagColours;
 }
 
 enum TagValues {

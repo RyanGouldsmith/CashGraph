@@ -1,24 +1,30 @@
-import * as React from 'react';
-import { graphql } from 'react-apollo';
+import React from 'react';
+import { Query } from 'react-apollo';
 
 import { GetTagsQuery } from './tags-query';
-import { TagsQuery } from './tags-types';
+import { TagType } from './tags-types';
 
-const Tags = graphql<{}, TagsQuery>(GetTagsQuery);
-
-export default Tags(({ data }) => {
-  const { loading, tags = [] } = data;
+export const Tags: React.SFC<{}> = _ => {
   return (
-    <div className="tags">
+    <React.Fragment>
       <h1>The tags are: </h1>
-      {loading && <p className="tags__loading">Loading...</p>}
-      {tags.map(tag => {
-        return (
-          <p style={{ color: `${tag.colour}` }} className="tags__tag">
-            {tag.name}
-          </p>
-        );
-      })}
-    </div>
+      <Query query={GetTagsQuery}>
+        {({ loading, data: { tags } }) => {
+          if (loading) return <p className="tags__loading">Loading...</p>;
+          return (
+            <div className="tags">
+              {tags.map((tag: TagType) => {
+                return (
+                  <p style={{ color: `${tag.colour}` }} className="tags__tag">
+                    {tag.name}
+                  </p>
+                );
+              })}
+            </div>
+          );
+        }}
+      </Query>
+    </React.Fragment>
   );
-});
+};
+export default Tags;
