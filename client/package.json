@@ -8,7 +8,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "apollo-boost": "^0.1.16",
     "graphql": "^14.0.2",
