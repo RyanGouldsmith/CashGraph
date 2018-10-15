@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/CashGraph
+  steps:
+    - run:
+      name: Checkout repo
+      command: checkout
+    - run:
+      name: Go to client
+      command: cd client
+    - restore_cache:
+        keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+    - run: 
+      name: Install dependencies
+      command: npm install
+    - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+    - run:
+      name: Run client tests
+      command: npm run test
