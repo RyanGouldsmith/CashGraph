@@ -3,7 +3,7 @@ import React from 'react';
 import { Tags } from '../tags/tags';
 import { Spending } from '../spending/spending';
 
-export function Dashboard() {
+export const Dashboard: React.SFC<{}> = () => {
   return (
     <React.Fragment>
       <h1>Cash Graph Dashboard</h1>
@@ -13,4 +13,4 @@ export function Dashboard() {
       </main>
     </React.Fragment>
   );
-}
+};

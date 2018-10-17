@@ -1,5 +1,7 @@
 # CashGraph
 
+[![CircleCI](https://circleci.com/gh/RyanGouldsmith/CashGraph/tree/master.svg?style=svg)](https://circleci.com/gh/RyanGouldsmith/CashGraph/tree/master)
+
 🌍A GraphQL implementation of spending 📈
 
 ## Application Structure
