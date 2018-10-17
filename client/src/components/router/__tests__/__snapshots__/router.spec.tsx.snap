@@ -2,6 +2,7 @@
 
 exports[`Router should not render any child component for a non-existant root 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main
@@ -58,6 +59,7 @@ Object {
 
 exports[`Router should the dashboard component for root \`/\` 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main

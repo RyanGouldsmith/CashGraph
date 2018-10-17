@@ -8,7 +8,7 @@ import { MemoryRouter } from 'react-router';
 const { render } = TestLibrary;
 test('Router should not render any child component for a non-existant root', () => {
   const routerOutput = render(
-    <MockedProvider mocks={[]} addTypename={false}>
+    <MockedProvider mocks={[]}>
       <MemoryRouter initialEntries={['/no-go']}>
         <Router />
       </MemoryRouter>
@@ -20,7 +20,7 @@ test('Router should not render any child component for a non-existant root', () 
 
 test('Router should the dashboard component for root `/`', () => {
   const routerOutput = render(
-    <MockedProvider mocks={[]} addTypename={false}>
+    <MockedProvider mocks={[]}>
       <MemoryRouter initialEntries={['/']}>
         <Router />
       </MemoryRouter>
