@@ -14,16 +14,24 @@ export const Spending: React.SFC<{ limit: Number }> = ({ limit }) => {
     <React.Fragment>
       <h1>Spending ... </h1>
       <Query query={GetSpendingQuery} variables={{ limit }}>
-        {({ loading, data: { spending } }) => {
+        {({ loading, data }) => {
           if (loading) return <p className="spending__loading">Loading Spending</p>;
-          return (
-            <section className="spending">
-              <p>{`Total Spending is £${totalSpending(spending)}`}</p>
-              {spending.map((item: SpendingType) => {
-                return <p className="spending__title">{item.title}</p>;
-              })}
-            </section>
-          );
+          if (data) {
+            const { spending } = data;
+            return (
+              <section className="spending">
+                <p>{`Total Spending is £${totalSpending(spending)}`}</p>
+                {spending.map((item: SpendingType) => {
+                  return (
+                    <p className="spending__title" key={item.title}>
+                      {item.title}
+                    </p>
+                  );
+                })}
+              </section>
+            );
+          }
+          return null;
         }}
       </Query>
     </React.Fragment>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Router should not render any child component for a non-existant root 1`] = `
+exports[`Router should not render any child component for a non-existant path 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -57,7 +57,7 @@ Object {
 }
 `;
 
-exports[`Router should the dashboard component for root \`/\` 1`] = `
+exports[`Router should render the Spending component for path \`/spending\` 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -76,22 +76,147 @@ Object {
         <main
           class="dashboard"
         >
-          <h1>
-            The tags are: 
-          </h1>
-          <p
-            class="tags__loading"
+          <section
+            class="dashboard__tags"
           >
-            Loading...
-          </p>
-          <h1>
-            Spending ... 
-          </h1>
-          <p
-            class="spending__loading"
+            <h1>
+              The tags are: 
+            </h1>
+          </section>
+          <section
+            class="dashboard__spending"
           >
-            Loading Spending
-          </p>
+            <a
+              href="/spending"
+            >
+              More Spending ...
+            </a>
+            <h1>
+              Spending ... 
+            </h1>
+          </section>
+        </main>
+      </main>
+    </div>
+    <div>
+      <main
+        class="content"
+      >
+        <h1>
+          Spending ... 
+        </h1>
+        <p
+          class="spending__loading"
+        >
+          Loading Spending
+        </p>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main
+      class="content"
+    >
+      <h1>
+        Spending ... 
+      </h1>
+      <p
+        class="spending__loading"
+      >
+        Loading Spending
+      </p>
+    </main>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Router should render the dashboard component for path \`/\` 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main
+        class="content"
+      />
+    </div>
+    <div>
+      <main
+        class="content"
+      >
+        <h1>
+          Cash Graph Dashboard
+        </h1>
+        <main
+          class="dashboard"
+        >
+          <section
+            class="dashboard__tags"
+          >
+            <h1>
+              The tags are: 
+            </h1>
+            <p
+              class="tags__loading"
+            >
+              Loading...
+            </p>
+          </section>
+          <section
+            class="dashboard__spending"
+          >
+            <a
+              href="/spending"
+            >
+              More Spending ...
+            </a>
+            <h1>
+              Spending ... 
+            </h1>
+            <p
+              class="spending__loading"
+            >
+              Loading Spending
+            </p>
+          </section>
         </main>
       </main>
     </div>
@@ -106,22 +231,35 @@ Object {
       <main
         class="dashboard"
       >
-        <h1>
-          The tags are: 
-        </h1>
-        <p
-          class="tags__loading"
+        <section
+          class="dashboard__tags"
         >
-          Loading...
-        </p>
-        <h1>
-          Spending ... 
-        </h1>
-        <p
-          class="spending__loading"
+          <h1>
+            The tags are: 
+          </h1>
+          <p
+            class="tags__loading"
+          >
+            Loading...
+          </p>
+        </section>
+        <section
+          class="dashboard__spending"
         >
-          Loading Spending
-        </p>
+          <a
+            href="/spending"
+          >
+            More Spending ...
+          </a>
+          <h1>
+            Spending ... 
+          </h1>
+          <p
+            class="spending__loading"
+          >
+            Loading Spending
+          </p>
+        </section>
       </main>
     </main>
   </div>,

@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import * as React from 'react';
 import * as TestLibrary from 'react-testing-library';
 import * as ApolloTestUtils from 'react-apollo/test-utils';
+import { BrowserRouter } from 'react-router-dom';
 import { GetSpendingQuery } from '../../spending/spending-query';
 import { GetTagsQuery } from '../../tags/tags-query';
 import { Dashboard } from '../dashboard';
@@ -14,7 +15,7 @@ const mocks = [
   {
     request: {
       query: GetSpendingQuery,
-      variables: { limit: 1 },
+      variables: { limit: 2 },
     },
     result: {
       data: {
@@ -49,7 +50,9 @@ const mocks = [
 test('should match the snapshot containing tags and spending', async () => {
   const { container } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Dashboard />
+      <BrowserRouter>
+        <Dashboard />
+      </BrowserRouter>
     </MockedProvider>,
   );
 

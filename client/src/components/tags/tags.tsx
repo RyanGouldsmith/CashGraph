@@ -9,19 +9,23 @@ export const Tags: React.SFC<{}> = _ => {
     <React.Fragment>
       <h1>The tags are: </h1>
       <Query query={GetTagsQuery}>
-        {({ loading, data: { tags } }) => {
+        {({ loading, data }) => {
           if (loading) return <p className="tags__loading">Loading...</p>;
-          return (
-            <div className="tags">
-              {tags.map((tag: TagType) => {
-                return (
-                  <p style={{ color: `${tag.colour}` }} className="tags__tag">
-                    {tag.name}
-                  </p>
-                );
-              })}
-            </div>
-          );
+          if (data) {
+            const { tags } = data;
+            return (
+              <div className="tags">
+                {tags.map((tag: TagType) => {
+                  return (
+                    <p style={{ color: `${tag.colour}` }} className="tags__tag" key={tag.name}>
+                      {tag.name}
+                    </p>
+                  );
+                })}
+              </div>
+            );
+          }
+          return null;
         }}
       </Query>
     </React.Fragment>
