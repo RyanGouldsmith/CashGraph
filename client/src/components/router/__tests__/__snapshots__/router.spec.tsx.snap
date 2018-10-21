@@ -7,13 +7,21 @@ Object {
     <div>
       <main
         class="content"
-      />
+      >
+        <h1>
+          Sorry! That page does not exist
+        </h1>
+      </main>
     </div>
   </body>,
   "container": <div>
     <main
       class="content"
-    />
+    >
+      <h1>
+        Sorry! That page does not exist
+      </h1>
+    </main>
   </div>,
   "debug": [Function],
   "getAllByAltText": [Function],
@@ -64,7 +72,11 @@ Object {
     <div>
       <main
         class="content"
-      />
+      >
+        <h1>
+          Sorry! That page does not exist
+        </h1>
+      </main>
     </div>
     <div>
       <main
@@ -176,7 +188,11 @@ Object {
     <div>
       <main
         class="content"
-      />
+      >
+        <h1>
+          Sorry! That page does not exist
+        </h1>
+      </main>
     </div>
     <div>
       <main
