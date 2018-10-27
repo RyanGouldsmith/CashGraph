@@ -2,7 +2,6 @@
 
 exports[`Router should not render any child component for a non-existant path 1`] = `
 Object {
-  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main
@@ -67,49 +66,7 @@ Object {
 
 exports[`Router should render the Spending component for path \`/spending\` 1`] = `
 Object {
-  "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <main
-        class="content"
-      >
-        <h1>
-          Sorry! That page does not exist
-        </h1>
-      </main>
-    </div>
-    <div>
-      <main
-        class="content"
-      >
-        <h1>
-          Cash Graph Dashboard
-        </h1>
-        <main
-          class="dashboard"
-        >
-          <section
-            class="dashboard__tags"
-          >
-            <h1>
-              The tags are: 
-            </h1>
-          </section>
-          <section
-            class="dashboard__spending"
-          >
-            <a
-              href="/spending"
-            >
-              More Spending ...
-            </a>
-            <h1>
-              Spending ... 
-            </h1>
-          </section>
-        </main>
-      </main>
-    </div>
     <div>
       <main
         class="content"
@@ -117,11 +74,6 @@ Object {
         <h1>
           Spending ... 
         </h1>
-        <p
-          class="spending__loading"
-        >
-          Loading Spending
-        </p>
       </main>
     </div>
   </body>,
@@ -132,11 +84,6 @@ Object {
       <h1>
         Spending ... 
       </h1>
-      <p
-        class="spending__loading"
-      >
-        Loading Spending
-      </p>
     </main>
   </div>,
   "debug": [Function],
@@ -183,17 +130,7 @@ Object {
 
 exports[`Router should render the dashboard component for path \`/\` 1`] = `
 Object {
-  "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <main
-        class="content"
-      >
-        <h1>
-          Sorry! That page does not exist
-        </h1>
-      </main>
-    </div>
     <div>
       <main
         class="content"
@@ -210,11 +147,6 @@ Object {
             <h1>
               The tags are: 
             </h1>
-            <p
-              class="tags__loading"
-            >
-              Loading...
-            </p>
           </section>
           <section
             class="dashboard__spending"
@@ -227,11 +159,6 @@ Object {
             <h1>
               Spending ... 
             </h1>
-            <p
-              class="spending__loading"
-            >
-              Loading Spending
-            </p>
           </section>
         </main>
       </main>
@@ -253,11 +180,6 @@ Object {
           <h1>
             The tags are: 
           </h1>
-          <p
-            class="tags__loading"
-          >
-            Loading...
-          </p>
         </section>
         <section
           class="dashboard__spending"
@@ -270,11 +192,6 @@ Object {
           <h1>
             Spending ... 
           </h1>
-          <p
-            class="spending__loading"
-          >
-            Loading Spending
-          </p>
         </section>
       </main>
     </main>

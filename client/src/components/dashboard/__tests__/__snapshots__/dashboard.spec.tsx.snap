@@ -14,11 +14,22 @@ exports[`should match the snapshot containing tags and spending 1`] = `
       <h1>
         The tags are: 
       </h1>
-      <p
-        class="tags__loading"
+      <div
+        class="tags"
       >
-        Loading...
-      </p>
+        <p
+          class="tags__tag"
+          style="color: RED;"
+        >
+          ENTERTAINMENT
+        </p>
+        <p
+          class="tags__tag"
+          style="color: BLUE;"
+        >
+          TRAVEL
+        </p>
+      </div>
     </section>
     <section
       class="dashboard__spending"
@@ -31,11 +42,23 @@ exports[`should match the snapshot containing tags and spending 1`] = `
       <h1>
         Spending ... 
       </h1>
-      <p
-        class="spending__loading"
+      <section
+        class="spending"
       >
-        Loading Spending
-      </p>
+        <p>
+          Total Spending is £10
+        </p>
+        <p
+          class="spending__title"
+        >
+          testSpendingTitle
+        </p>
+        <p
+          class="spending__title"
+        >
+          anotherSpendingTitle
+        </p>
+      </section>
     </section>
   </main>
 </div>

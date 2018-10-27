@@ -1,14 +1,11 @@
 import 'babel-polyfill';
-import * as React from 'react';
-import * as TestLibrary from 'react-testing-library';
-import * as ApolloTestUtils from 'react-apollo/test-utils';
+import React from 'react';
+import { render, cleanup } from 'react-testing-library';
+import { MockedProvider } from 'react-apollo/test-utils';
 
-import Tags from '../tags';
+import { Tags } from '../tags';
 import { GetTagsQuery } from '../tags-query';
 import { wait } from 'react-testing-library';
-
-const { render, cleanup } = TestLibrary;
-const { MockedProvider } = ApolloTestUtils;
 
 const mocks = [
   {

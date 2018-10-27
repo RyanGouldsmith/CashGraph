@@ -20,3 +20,5 @@ export const Dashboard: React.SFC<{}> = () => {
     </React.Fragment>
   );
 };
+
+export default Dashboard;

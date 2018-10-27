@@ -2,7 +2,6 @@
 
 exports[`Should render the error screen 1`] = `
 Object {
-  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <h1>

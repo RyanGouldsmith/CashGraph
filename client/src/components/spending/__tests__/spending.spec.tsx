@@ -4,7 +4,7 @@ import { render, cleanup } from 'react-testing-library';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { wait } from 'react-testing-library';
 
-import Spending from '../spending';
+import { Spending } from '../spending';
 import { GetSpendingQuery } from '../spending-query';
 
 afterEach(cleanup);
