@@ -7,13 +7,11 @@ import { GetSpendingQuery } from '../../spending/spending-query';
 import { GetTagsQuery } from '../../tags/tags-query';
 import { Dashboard } from '../dashboard';
 
-afterEach(cleanup);
-
 const mocks = [
   {
     request: {
       query: GetSpendingQuery,
-      variables: { limit: 2 },
+      variables: { limit: 2, userId: '123' },
     },
     result: {
       data: {
@@ -44,6 +42,17 @@ const mocks = [
     },
   },
 ];
+
+let originalProcessEnv = Object.assign({}, process.env);
+
+beforeEach(() => {
+  process.env.TEST_USER = '123';
+});
+
+afterEach(() => {
+  cleanup();
+  process.env = originalProcessEnv;
+});
 
 test('should match the snapshot containing tags and spending', async () => {
   const { container } = render(

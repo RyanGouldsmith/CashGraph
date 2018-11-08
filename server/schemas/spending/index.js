@@ -3,6 +3,6 @@ export const Spending = `
     title: String
     price: Float
     tag: Tag,
-    userId: ID!
+    userId: String!
   }
 `;

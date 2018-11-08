@@ -7,13 +7,13 @@ import { wait } from 'react-testing-library';
 import { Spending } from '../spending';
 import { GetSpendingQuery } from '../spending-query';
 
-afterEach(cleanup);
 const mocks = [
   {
     request: {
       query: GetSpendingQuery,
       variables: {
         limit: 1,
+        userId: '123',
       },
     },
     result: {
@@ -23,6 +23,17 @@ const mocks = [
     },
   },
 ];
+
+let originalProcessEnv = Object.assign({}, process.env);
+
+beforeEach(() => {
+  process.env.TEST_USER = '123';
+});
+
+afterEach(() => {
+  cleanup();
+  process.env = originalProcessEnv;
+});
 
 test('should render the spending text', async () => {
   const { queryByText } = render(

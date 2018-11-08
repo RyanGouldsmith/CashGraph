@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const GetSpendingQuery = gql`
-  query GetSpending($limit: Int) {
-    spending(userId: 1, limit: $limit) {
+  query GetSpending($userId: String!, $limit: Int) {
+    spending(userId: $userId, limit: $limit) {
       title
       price
     }

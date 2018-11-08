@@ -10,10 +10,12 @@ const totalSpending = (spendings: Array<SpendingType>): number => {
 };
 
 export const Spending: React.SFC<{ limit: Number }> = ({ limit }) => {
+  // Temporary
+  const userId = process.env.TEST_USER;
   return (
     <React.Fragment>
       <h1>Spending ... </h1>
-      <Query query={GetSpendingQuery} variables={{ limit }}>
+      <Query query={GetSpendingQuery} variables={{ userId, limit }}>
         {({ loading, data }) => {
           if (loading) return <p className="spending__loading">Loading Spending</p>;
           if (data) {

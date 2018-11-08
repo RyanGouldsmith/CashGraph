@@ -1,3 +1,6 @@
+import Mongoose from 'mongoose';
+import { Spending } from '../../db/connect';
+
 const spendings = [
   {
     title: 'Shoes on Holiday',
@@ -47,6 +50,8 @@ const spendings = [
 
 export const SpendingResolver = {
   spending(_, { userId, limit }) {
-    return spendings.filter(spending => spending.person.id === userId).slice(0, limit);
+    return Spending.find({ userId: new Mongoose.Types.ObjectId(userId) })
+      .limit(limit)
+      .exec();
   },
 };
