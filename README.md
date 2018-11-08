@@ -22,7 +22,9 @@ The resolvers directory contains all the resolver functions for queries coming i
 
 #### Getting up and running
 
-Go into the server directory and run `npm run install` followed by a `npm run start`. This will run a `nodemon` so any changes will be automatically detected.
+MongoDB will be needed to interact with the application. You will need to create two collections `spending` and `user`.
+
+Go into the server directory and run `npm run install` followed by a `HOSTNAME=<DBHOSTNAME> PORT=<DBPORT> DB=<DBNAME> npm run start`. This will run a `nodemon` so any changes will be automatically detected.
 
 ---
 
@@ -34,6 +36,8 @@ All components are withing the `src/components` directory. Inside here also cont
 
 #### Starting the application
 
-Go to the client directory, run `npm run install` followed by a `npm run start`
+Go to the client directory, run `npm run install` followed by a `TEST_USER=<USERID> npm run start`
+
+Currently the UserID is the ObjectId from the Mongo Record in the Mongo Collection `user`
 
 To run any tests, run `npm run test`. The testing tools used is the `react-testing-library` with `Jest`
