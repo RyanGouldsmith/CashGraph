@@ -5,7 +5,7 @@ import { Spending } from './spending';
 export const Query = `
   type Query {
     users: [User]
-    user(email: String): User!
+    user(id: String!): User!
     tags: [Tag]
     tag(name: AllowedTagName): Tag!
     spending(userId: String!, limit: Int): [Spending]

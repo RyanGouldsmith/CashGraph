@@ -1,21 +1,10 @@
-const users = [
-  {
-    id: 1,
-    name: 'user 1',
-    email: 'user@user.uk',
-  },
-  {
-    id: 2,
-    name: 'user 2',
-    email: 'user2@user.uk',
-  },
-];
+import { User } from '../../db/connect';
 
 export const UserResolver = {
   users() {
-    return users;
+    return User.find({}).exec();
   },
-  user(_, { email }) {
-    return users.find(user => user.email === email);
+  user(_, { id }) {
+    return User.findById(id).exec();
   },
 };

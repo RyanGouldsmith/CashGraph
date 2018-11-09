@@ -11,4 +11,4 @@ export function connectDatabase() {
 }
 
 export const Spending = Mongoose.model('Spending', SpendingSchema, 'spending');
-export const User = Mongoose.model('User', UserSchema, 'user');
+export const User = Mongoose.model('User', UserSchema, 'users');
