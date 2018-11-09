@@ -10,7 +10,7 @@ const Spending = React.lazy(() =>
   import(/* webpackChunkName: "spending" */ '../spending/spending'),
 );
 
-const ErroComp = React.lazy(() => import(/* webpackChunkName: "error" */ '../error/error'));
+const Error = React.lazy(() => import(/* webpackChunkName: "error" */ '../error/error'));
 
 export const Router: React.SFC<{}> = _ => {
   return (
@@ -19,7 +19,7 @@ export const Router: React.SFC<{}> = _ => {
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/spending" component={Spending} />
-          <Route component={ErroComp} />
+          <Route component={Error} />
         </Switch>
       </React.Suspense>
     </main>
