@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Tags } from '../tags/tags';
 import { Spending } from '../spending/spending';
-import { Link } from 'react-router-dom';
 
 export const Dashboard: React.SFC<{}> = () => {
   return (

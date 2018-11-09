@@ -2,6 +2,7 @@
 
 exports[`Router should not render any child component for a non-existant path 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main
@@ -66,6 +67,7 @@ Object {
 
 exports[`Router should render the Spending component for path \`/spending\` 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main
@@ -130,6 +132,7 @@ Object {
 
 exports[`Router should render the dashboard component for path \`/\` 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <main
