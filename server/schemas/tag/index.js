@@ -21,3 +21,10 @@ export const Tag = `
     colour: AllowedColour
   }
 `;
+
+export const TagInput = `
+  input TagInput {
+    name: AllowedTagName,
+    colour: AllowedColour
+  }
+`;

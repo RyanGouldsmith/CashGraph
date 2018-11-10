@@ -1,6 +1,8 @@
 import { User } from './user';
-import { Tag, AllowedTagName, AllowedColour } from './tag';
-import { Spending } from './spending';
+import {
+  Tag, AllowedTagName, AllowedColour, TagInput,
+} from './tag';
+import { Spending, SpendingInput } from './spending';
 
 export const Query = `
   type Query {
@@ -12,9 +14,17 @@ export const Query = `
   }
 `;
 
+export const Mutation = `
+  type Mutation {
+    createSpending(spending: SpendingInput): Spending
+  }
+`;
+
 export const SchemaDefinition = `schema {
-  query: Query
+  query: Query,
+  mutation: Mutation
 }
 `;
 
-export const Schemas = [User, AllowedTagName, AllowedColour, Tag, Spending];
+export const QuerySchemas = [User, AllowedTagName, AllowedColour, Tag, Spending];
+export const MutationSchemas = [TagInput, SpendingInput];

@@ -6,3 +6,12 @@ export const Spending = `
     userId: String!
   }
 `;
+
+export const SpendingInput = `
+  input SpendingInput {
+    title: String!
+    price: Float!
+    tag: TagInput!
+    userId: String!
+  }
+`;

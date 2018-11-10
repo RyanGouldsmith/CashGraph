@@ -3,13 +3,18 @@ import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
 import { connectDatabase } from './db/connect';
 
-import { SchemaDefinition, Query, Schemas } from './schemas';
-import { QueryResolvers } from './resolvers';
+import {
+  SchemaDefinition, Query, Mutation, QuerySchemas, MutationSchemas,
+} from './schemas';
+import { QueryResolvers, MutationResolvers } from './resolvers';
 
-const typeDefs = [SchemaDefinition, Query, ...Schemas];
+const typeDefs = [SchemaDefinition, Query, Mutation, ...QuerySchemas, ...MutationSchemas];
 const resolvers = {
   Query: {
     ...QueryResolvers,
+  },
+  Mutation: {
+    ...MutationResolvers,
   },
 };
 connectDatabase();
