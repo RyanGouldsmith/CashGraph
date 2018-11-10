@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { GetSpendingQuery } from '../../spending/spending-query';
 import { GetTagsQuery } from '../../tags/tags-query';
 import { Dashboard } from '../dashboard';
+import { UserProvider } from '../../user/user-provider';
 
 const mocks = [
   {
@@ -43,23 +44,16 @@ const mocks = [
   },
 ];
 
-let originalProcessEnv = Object.assign({}, process.env);
-
-beforeEach(() => {
-  process.env.TEST_USER = '123';
-});
-
-afterEach(() => {
-  cleanup();
-  process.env = originalProcessEnv;
-});
+afterEach(cleanup);
 
 test('should match the snapshot containing tags and spending', async () => {
   const { container } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <BrowserRouter>
-        <Dashboard />
-      </BrowserRouter>
+      <UserProvider.Provider value="123">
+        <BrowserRouter>
+          <Dashboard />
+        </BrowserRouter>
+      </UserProvider.Provider>
     </MockedProvider>,
   );
 

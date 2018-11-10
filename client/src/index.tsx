@@ -7,6 +7,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Router } from './components/router/router';
+import { UserProvider } from './components/user/user-provider';
 
 const client = new ApolloClient({
   link: createHttpLink({ uri: 'http://localhost:3000/spending' }),
@@ -14,10 +15,12 @@ const client = new ApolloClient({
 });
 
 render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
-  </ApolloProvider>,
+  <UserProvider.Provider value={process.env.TEST_USER}>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ApolloProvider>
+  </UserProvider.Provider>,
   document.getElementById('root'),
 );

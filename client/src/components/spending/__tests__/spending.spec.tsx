@@ -6,6 +6,7 @@ import { wait } from 'react-testing-library';
 
 import { Spending } from '../spending';
 import { GetSpendingQuery } from '../spending-query';
+import { UserProvider } from '../../user/user-provider';
 
 const mocks = [
   {
@@ -24,21 +25,14 @@ const mocks = [
   },
 ];
 
-let originalProcessEnv = Object.assign({}, process.env);
-
-beforeEach(() => {
-  process.env.TEST_USER = '123';
-});
-
-afterEach(() => {
-  cleanup();
-  process.env = originalProcessEnv;
-});
+afterEach(cleanup);
 
 test('should render the spending text', async () => {
   const { queryByText } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Spending limit={1} />
+      <UserProvider.Provider value="123">
+        <Spending limit={1} />
+      </UserProvider.Provider>
     </MockedProvider>,
   );
 
@@ -51,7 +45,9 @@ test('should render the spending text', async () => {
 test('should render two spending items', async () => {
   const { queryByText } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Spending limit={1} />
+      <UserProvider.Provider value="123">
+        <Spending limit={1} />
+      </UserProvider.Provider>
     </MockedProvider>,
   );
 
@@ -65,7 +61,9 @@ test('should render two spending items', async () => {
 test('should render the loading when loading data', async () => {
   const { container } = render(
     <MockedProvider mocks={[]}>
-      <Spending limit={1} />
+      <UserProvider.Provider value="123">
+        <Spending limit={1} />
+      </UserProvider.Provider>
     </MockedProvider>,
   );
 
