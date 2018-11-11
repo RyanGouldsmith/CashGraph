@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot for navigation 1`] = `
+<div>
+  <header>
+    <nav>
+      <a
+        href="/knownRouteForDashboard"
+      >
+        Home
+      </a>
+      <a
+        href="/knownRouteForSpendingCreation"
+      >
+        Create Spending
+      </a>
+    </nav>
+  </header>
+</div>
+`;

@@ -5,6 +5,20 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
       <main
         class="content"
       >
@@ -15,6 +29,20 @@ Object {
     </div>
   </body>,
   "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
     <main
       class="content"
     >
@@ -70,6 +98,20 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
       <main
         class="content"
       >
@@ -120,6 +162,20 @@ Object {
     </div>
   </body>,
   "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
     <main
       class="content"
     >
@@ -215,6 +271,20 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
       <main
         class="content"
       >
@@ -225,6 +295,20 @@ Object {
     </div>
   </body>,
   "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
     <main
       class="content"
     >
@@ -280,6 +364,20 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
       <main
         class="content"
       >
@@ -313,6 +411,20 @@ Object {
     </div>
   </body>,
   "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
     <main
       class="content"
     >
