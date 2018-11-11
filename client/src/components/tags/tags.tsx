@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 
 import { GetTagsQuery } from './tags-query';
 import { TagType } from './tags-types';
+import { Loading } from '../loading/loading';
 
 export const Tags: React.SFC<{}> = _ => {
   return (
@@ -10,7 +11,7 @@ export const Tags: React.SFC<{}> = _ => {
       <h1>The tags are: </h1>
       <Query query={GetTagsQuery}>
         {({ loading, data }) => {
-          if (loading) return <p className="tags__loading">Loading...</p>;
+          if (loading) return <Loading />;
           if (data) {
             const { tags } = data;
             return (

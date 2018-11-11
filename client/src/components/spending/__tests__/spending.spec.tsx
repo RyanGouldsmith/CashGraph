@@ -59,7 +59,7 @@ test('should render two spending items', async () => {
 });
 
 test('should render the loading when loading data', async () => {
-  const { container } = render(
+  const { getByText } = render(
     <MockedProvider mocks={[]}>
       <UserProvider.Provider value="123">
         <Spending limit={1} />
@@ -67,6 +67,6 @@ test('should render the loading when loading data', async () => {
     </MockedProvider>,
   );
 
-  const loadingNode = container.querySelector('.spending__loading');
+  const loadingNode = getByText('Loading');
   expect(loadingNode).not.toBeNull();
 });

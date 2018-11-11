@@ -5,6 +5,9 @@ export const SpendingResolver = {
   Query: {
     spending(_, { userId, limit }) {
       return Spending.find({ userId: new Mongoose.Types.ObjectId(userId) })
+        .sort({
+          _id: -1,
+        })
         .limit(limit)
         .exec();
     },

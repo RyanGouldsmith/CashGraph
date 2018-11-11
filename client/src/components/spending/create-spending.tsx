@@ -40,7 +40,7 @@ export const CreateSpending: React.SFC<{}> = () => {
                   <label htmlFor="title">Enter the item you purchased</label>
                   <input id="title" placeholder="Shoes" type="text" ref={titleRef} />
                   <label htmlFor="price">The price of the item</label>
-                  <input id="price" type="number" min="0" ref={priceRef} />
+                  <input id="price" type="number" min="0" ref={priceRef} step="0.01" />
                   <label htmlFor="tag">Type of Tag</label>
                   <input id="tag" ref={tagRef} />
                   <label htmlFor="tag-colour">Tag Colour</label>

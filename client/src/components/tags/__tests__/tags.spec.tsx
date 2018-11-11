@@ -56,6 +56,6 @@ test('should render the loading text', async () => {
     </MockedProvider>,
   );
 
-  const loadingNode = queryByText('Loading...');
+  const loadingNode = queryByText('Loading');
   expect(loadingNode).not.toBeNull();
 });
