@@ -8,3 +8,20 @@ export const GetSpendingQuery = gql`
     }
   }
 `;
+
+gql`
+  type SpendingInput {
+    title: String!
+    price: Float!
+    tag: TagInput
+    userId: String!
+  }
+`;
+
+export const SpendingMutation = gql`
+  mutation CreateSpending($spending: SpendingInput) {
+    createSpending(spending: $spending) {
+      title
+    }
+  }
+`;

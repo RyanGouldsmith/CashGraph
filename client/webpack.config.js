@@ -1,6 +1,7 @@
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -30,6 +31,9 @@ module.exports = {
       'process.env': {
         TEST_USER: JSON.stringify(process.env.TEST_USER),
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/components/index.html',
     }),
   ],
   devtool: 'eval-source-map',

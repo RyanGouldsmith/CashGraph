@@ -48,3 +48,17 @@ test('Router should render the Spending component for path `/spending`', async (
     expect(routerOutput).toMatchSnapshot();
   });
 });
+
+test('Router should render the CreateSpending component for path `/spending/create`', async () => {
+  const routerOutput = render(
+    <MockedProvider mocks={[]}>
+      <MemoryRouter initialEntries={['/spending/create']}>
+        <Router />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+
+  await wait(() => {
+    expect(routerOutput).toMatchSnapshot();
+  });
+});

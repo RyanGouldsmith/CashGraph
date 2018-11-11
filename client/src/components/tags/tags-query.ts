@@ -8,3 +8,27 @@ export const GetTagsQuery = gql`
     }
   }
 `;
+
+gql`
+  type TagInput {
+    name: TagName
+    colour: TagColour
+  }
+`;
+
+gql`
+  enum TagName {
+    HOLIDAY
+    FOOD
+    TRAVEL
+    ENTERTAINMENT
+  }
+`;
+
+gql`
+  enum TagColour {
+    GREEN
+    RED
+    BLUE
+  }
+`;

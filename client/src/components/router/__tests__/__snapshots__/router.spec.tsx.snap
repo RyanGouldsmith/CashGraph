@@ -65,6 +65,151 @@ Object {
 }
 `;
 
+exports[`Router should render the CreateSpending component for path \`/spending/create\` 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main
+        class="content"
+      >
+        <form>
+          <label
+            for="title"
+          >
+            Enter the item you purchased
+          </label>
+          <input
+            id="title"
+            placeholder="Shoes"
+            type="text"
+          />
+          <label
+            for="price"
+          >
+            The price of the item
+          </label>
+          <input
+            id="price"
+            min="0"
+            type="number"
+          />
+          <label
+            for="tag"
+          >
+            Type of Tag
+          </label>
+          <input
+            id="tag"
+          />
+          <label
+            for="tag-colour"
+          >
+            Tag Colour
+          </label>
+          <input
+            id="tag-colour"
+          />
+          <button
+            type="submit"
+          >
+            submit
+          </button>
+        </form>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main
+      class="content"
+    >
+      <form>
+        <label
+          for="title"
+        >
+          Enter the item you purchased
+        </label>
+        <input
+          id="title"
+          placeholder="Shoes"
+          type="text"
+        />
+        <label
+          for="price"
+        >
+          The price of the item
+        </label>
+        <input
+          id="price"
+          min="0"
+          type="number"
+        />
+        <label
+          for="tag"
+        >
+          Type of Tag
+        </label>
+        <input
+          id="tag"
+        />
+        <label
+          for="tag-colour"
+        >
+          Tag Colour
+        </label>
+        <input
+          id="tag-colour"
+        />
+        <button
+          type="submit"
+        >
+          submit
+        </button>
+      </form>
+    </main>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`Router should render the Spending component for path \`/spending\` 1`] = `
 Object {
   "asFragment": [Function],
