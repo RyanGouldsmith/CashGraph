@@ -5,3 +5,10 @@ export const User = `
     email: String
   }
 `;
+
+export const UserInput = `
+  input UserInput {
+    name: String,
+    email: String
+  }
+`;
