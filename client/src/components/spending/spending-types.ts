@@ -1,4 +1,4 @@
-export interface SpendingQuery {
+export interface SpendingQueryResult {
   spending: Array<SpendingType>;
 }
 

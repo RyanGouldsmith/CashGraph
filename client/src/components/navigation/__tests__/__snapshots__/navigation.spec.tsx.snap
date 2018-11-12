@@ -15,6 +15,9 @@ exports[`should match the snapshot for navigation 1`] = `
         Create Spending
       </a>
     </nav>
+    <h1>
+      Loading
+    </h1>
   </header>
 </div>
 `;

@@ -1,18 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { UserDetails } from '../user/user-details';
+
 interface NavigationProps {
   routeForDashboard: string;
   routeForSpendingCreation: string;
 }
 
-export const Navigation = React.memo<NavigationProps>(
+export const Navigation: React.SFC<NavigationProps> = ({
+  routeForDashboard,
+  routeForSpendingCreation,
+}) => (
+  <header>
+    <NavigationBar
+      routeForDashboard={routeForDashboard}
+      routeForSpendingCreation={routeForSpendingCreation}
+    />
+    <UserDetails />
+  </header>
+);
+
+const NavigationBar = React.memo<NavigationProps>(
   ({ routeForDashboard, routeForSpendingCreation }) => (
-    <header>
-      <nav>
-        <Link to={routeForDashboard}>Home</Link>
-        <Link to={routeForSpendingCreation}>Create Spending</Link>
-      </nav>
-    </header>
+    <nav>
+      <Link to={routeForDashboard}>Home</Link>
+      <Link to={routeForSpendingCreation}>Create Spending</Link>
+    </nav>
   ),
 );
