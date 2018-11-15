@@ -24,7 +24,7 @@ export const UserResolver = {
         throw Error(e);
       }
     },
-    async updateUser(_, { user }) {
+    updateUser(_, { user }) {
       const { id, name, email } = user;
       let updatedUserDetails = {};
 
