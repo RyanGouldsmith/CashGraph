@@ -1,3 +1,5 @@
+import Mongoose from 'mongoose';
+
 import { User } from '../../db/connect';
 
 export const UserResolver = {
@@ -21,6 +23,22 @@ export const UserResolver = {
       } catch (e) {
         throw Error(e);
       }
+    },
+    async updateUser(_, { user }) {
+      const { id, name, email } = user;
+      let updatedUserDetails = {};
+
+      if (name) {
+        updatedUserDetails = { ...updatedUserDetails, name };
+      }
+
+      if (email) {
+        updatedUserDetails = { ...updatedUserDetails, email };
+      }
+
+      return User.findOneAndUpdate(new Mongoose.Types.ObjectId(id), updatedUserDetails, {
+        new: true,
+      });
     },
   },
 };

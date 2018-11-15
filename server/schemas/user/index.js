@@ -12,3 +12,11 @@ export const UserInput = `
     email: String
   }
 `;
+
+export const UserUpdateInput = `
+  input UserUpdateInput {
+    id: ID!
+    name: String
+    email: String
+  }
+`;

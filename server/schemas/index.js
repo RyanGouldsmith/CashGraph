@@ -1,4 +1,4 @@
-import { User, UserInput } from './user';
+import { User, UserInput, UserUpdateInput } from './user';
 import {
   Tag, AllowedTagName, AllowedColour, TagInput,
 } from './tag';
@@ -18,6 +18,7 @@ export const Mutation = `
   type Mutation {
     createSpending(spending: SpendingInput!): Spending
     createUser(user: UserInput!): User
+    updateUser(user: UserUpdateInput!): User
   }
 `;
 
@@ -28,4 +29,4 @@ export const SchemaDefinition = `schema {
 `;
 
 export const QuerySchemas = [User, AllowedTagName, AllowedColour, Tag, Spending];
-export const MutationSchemas = [TagInput, SpendingInput, UserInput];
+export const MutationSchemas = [TagInput, SpendingInput, UserInput, UserUpdateInput];
