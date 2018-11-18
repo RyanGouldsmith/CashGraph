@@ -19,6 +19,7 @@ export const Mutation = `
     createSpending(spending: SpendingInput!): Spending
     createUser(user: UserInput!): User
     updateUser(user: UserUpdateInput!): User
+    deleteUser(id: String!): Boolean
   }
 `;
 

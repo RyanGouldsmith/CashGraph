@@ -40,5 +40,8 @@ export const UserResolver = {
         new: true,
       });
     },
+    deleteUser(_, { id }) {
+      User.findByIdAndDelete(id).exec();
+    },
   },
 };
