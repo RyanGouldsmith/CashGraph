@@ -28,33 +28,36 @@ export const EditUser: React.SFC<{}> = () => {
   return (
     <UserProvider.Consumer>
       {(userId: String) => (
-        <Query query={GetUserQuery} variables={{ userId }}>
-          {({ loading, data }: UserQueryResult) => {
-            if (loading) return <Loading />;
-            if (data)
-              return (
-                <Mutation mutation={EditUserMutation}>
-                  {(editUser: MutationFn, result: MutationResult) => (
-                    <React.Fragment>
-                      {result.data ? (
-                        <h1>Edited successfully</h1>
-                      ) : (
-                        <EditUserForm
-                          submitForm={submitForm}
-                          editUser={editUser}
-                          userId={userId}
-                          emailRef={emailRef}
-                          nameRef={nameRef}
-                          userData={data.user}
-                        />
-                      )}
-                    </React.Fragment>
-                  )}
-                </Mutation>
-              );
-            return null;
-          }}
-        </Query>
+        <React.Fragment>
+          <h1>Edit your details</h1>
+          <Query query={GetUserQuery} variables={{ userId }}>
+            {({ loading, data }: UserQueryResult) => {
+              if (loading) return <Loading />;
+              if (data)
+                return (
+                  <Mutation mutation={EditUserMutation}>
+                    {(editUser: MutationFn, result: MutationResult) => (
+                      <React.Fragment>
+                        {result.data ? (
+                          <h1>Edited successfully</h1>
+                        ) : (
+                          <EditUserForm
+                            submitForm={submitForm}
+                            editUser={editUser}
+                            userId={userId}
+                            emailRef={emailRef}
+                            nameRef={nameRef}
+                            userData={data.user}
+                          />
+                        )}
+                      </React.Fragment>
+                    )}
+                  </Mutation>
+                );
+              return null;
+            }}
+          </Query>
+        </React.Fragment>
       )}
     </UserProvider.Consumer>
   );

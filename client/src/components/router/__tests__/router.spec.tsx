@@ -62,3 +62,17 @@ test('Router should render the CreateSpending component for path `/spending/crea
     expect(routerOutput).toMatchSnapshot();
   });
 });
+
+test('Router should render the EditUser component for path `/user/edit`', async () => {
+  const routerOutput = render(
+    <MockedProvider mocks={[]}>
+      <MemoryRouter initialEntries={['/user/edit']}>
+        <Router />
+      </MemoryRouter>
+    </MockedProvider>,
+  );
+
+  await wait(() => {
+    expect(routerOutput).toMatchSnapshot();
+  });
+});

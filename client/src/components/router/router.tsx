@@ -3,23 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Loading } from '../loading/loading';
 import { Navigation } from '../navigation/navigation';
 
-const Dashboard = React.lazy(() =>
-  import(/* webpackChunkName: "dashboard" */ '../dashboard/dashboard'),
-);
-
-const Spending = React.lazy(() =>
-  import(/* webpackChunkName: "spending" */ '../spending/spending'),
-);
-
-const Error = React.lazy(() => import(/* webpackChunkName: "error" */ '../error/error'));
-
-const CreateSpending = React.lazy(() =>
-  import(/* webpackChunkName: "create-spending" */ '../spending/create-spending'),
-);
-
-const EditUser = React.lazy(() =>
-  import(/* webpackChunkName: "edit-user" */ '../user/edit-user/edit-user'),
-);
+import { Dashboard, CreateSpending, Spending, EditUser, Error } from './router-components';
 
 const ROUTE_FOR_DASHBOARD = '/';
 const ROUTE_FOR_SPENDING_CREATION = '/spending/create';
