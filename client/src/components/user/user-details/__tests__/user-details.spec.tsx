@@ -5,8 +5,8 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { wait } from 'react-testing-library';
 
 import { UserDetails } from '../user-details';
-import { GetUserQuery } from '../user-query';
-import { UserProvider } from '../../user/user-provider';
+import { GetUserQuery } from '../../user-query';
+import { UserProvider } from '../../../user/user-provider';
 
 const mocks = [
   {

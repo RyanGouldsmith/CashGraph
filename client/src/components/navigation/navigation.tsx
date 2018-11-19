@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { UserDetails } from '../user/user-details';
+import { UserDetails } from '../user/user-details/user-details';
 
 interface NavigationProps {
   routeForDashboard: string;

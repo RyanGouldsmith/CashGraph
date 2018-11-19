@@ -1,16 +1,11 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 
-import { Loading } from '../loading/loading';
+import { Loading } from '../../loading/loading';
 
-import { UserProvider } from './user-provider';
-import { GetUserQuery } from './user-query';
-import { UserResult } from './user-types';
-
-interface UserQueryResult {
-  loading: boolean;
-  data: UserResult;
-}
+import { UserProvider } from '../user-provider';
+import { GetUserQuery } from '../user-query';
+import { UserQueryResult } from '../user-types';
 
 export const UserDetails: React.SFC<{}> = () => (
   <UserProvider.Consumer>

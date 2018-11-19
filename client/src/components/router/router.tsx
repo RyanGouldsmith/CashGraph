@@ -17,9 +17,14 @@ const CreateSpending = React.lazy(() =>
   import(/* webpackChunkName: "create-spending" */ '../spending/create-spending'),
 );
 
+const EditUser = React.lazy(() =>
+  import(/* webpackChunkName: "edit-user" */ '../user/edit-user/edit-user'),
+);
+
 const ROUTE_FOR_DASHBOARD = '/';
 const ROUTE_FOR_SPENDING_CREATION = '/spending/create';
 const ROUTE_FOR_SPENDING = '/spending';
+const ROUTE_FOR_USER_EDIT = '/user/edit';
 
 export const Router: React.SFC<{}> = _ => {
   return (
@@ -34,6 +39,7 @@ export const Router: React.SFC<{}> = _ => {
             <Route exact path={ROUTE_FOR_DASHBOARD} component={Dashboard} />
             <Route exact path={ROUTE_FOR_SPENDING_CREATION} component={CreateSpending} />
             <Route exact path={ROUTE_FOR_SPENDING} component={Spending} />
+            <Route exact path={ROUTE_FOR_USER_EDIT} component={EditUser} />
             <Route component={Error} />
           </Switch>
         </React.Suspense>
