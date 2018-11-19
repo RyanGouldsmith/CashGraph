@@ -2,6 +2,8 @@ import Mongoose from 'mongoose';
 
 import { User } from '../../db/connect';
 
+import { SpendingResolver } from '../spending';
+
 export const UserResolver = {
   Query: {
     users() {
@@ -40,8 +42,9 @@ export const UserResolver = {
         new: true,
       });
     },
-    deleteUser(_, { id }) {
-      User.findByIdAndDelete(id).exec();
+    async deleteUser(_, { id }) {
+      await User.findByIdAndDelete(id).exec();
+      await SpendingResolver.Mutation.deleteAllSpending(_, { userId: id });
     },
   },
 };

@@ -29,5 +29,8 @@ export const SpendingResolver = {
         throw Error(e);
       }
     },
+    async deleteAllSpending(_, { userId }) {
+      await Spending.deleteMany({ userId: new Mongoose.Types.ObjectId(userId) });
+    },
   },
 };

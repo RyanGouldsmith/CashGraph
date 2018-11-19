@@ -17,6 +17,7 @@ export const Query = `
 export const Mutation = `
   type Mutation {
     createSpending(spending: SpendingInput!): Spending
+    deleteAllSpending(userId: String!): Boolean
     createUser(user: UserInput!): User
     updateUser(user: UserUpdateInput!): User
     deleteUser(id: String!): Boolean
