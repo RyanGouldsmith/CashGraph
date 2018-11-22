@@ -32,6 +32,15 @@ export const SpendingResolver = {
     async deleteAllSpending(_, { userId }) {
       await Spending.deleteMany({ userId: new Mongoose.Types.ObjectId(userId) });
     },
+    async deleteSpending(_, { spending }) {
+      const { id, userId } = spending;
+      const response = await Spending.findOneAndDelete({
+        _id: new Mongoose.Types.ObjectId(id),
+        userId: new Mongoose.Types.ObjectId(userId),
+      });
+
+      return response !== null;
+    },
     editSpending(_, { spending }) {
       const {
         id, title, price, tag, userId,

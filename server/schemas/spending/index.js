@@ -18,11 +18,18 @@ export const SpendingInput = `
 `;
 
 export const EditSpendingInput = `
-input EditSpendingInput {
-  id: String!,
-  title: String
-  price: Float
-  tag: TagInput
-  userId: String!
-}
+  input EditSpendingInput {
+    id: String!,
+    title: String
+    price: Float
+    tag: TagInput
+    userId: String!
+  }
+`;
+
+export const DeleteSpendingInput = `
+  input DeleteSpendingInput {
+    id: String!
+    userId: String!
+  }
 `;
