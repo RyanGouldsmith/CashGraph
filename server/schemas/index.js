@@ -2,7 +2,7 @@ import { User, UserInput, UserUpdateInput } from './user';
 import {
   Tag, AllowedTagName, AllowedColour, TagInput,
 } from './tag';
-import { Spending, SpendingInput } from './spending';
+import { Spending, SpendingInput, EditSpendingInput } from './spending';
 
 export const Query = `
   type Query {
@@ -17,6 +17,7 @@ export const Query = `
 export const Mutation = `
   type Mutation {
     createSpending(spending: SpendingInput!): Spending
+    editSpending(spending: EditSpendingInput!): Spending
     deleteAllSpending(userId: String!): Boolean
     createUser(user: UserInput!): User
     updateUser(user: UserUpdateInput!): User
@@ -31,4 +32,10 @@ export const SchemaDefinition = `schema {
 `;
 
 export const QuerySchemas = [User, AllowedTagName, AllowedColour, Tag, Spending];
-export const MutationSchemas = [TagInput, SpendingInput, UserInput, UserUpdateInput];
+export const MutationSchemas = [
+  TagInput,
+  SpendingInput,
+  EditSpendingInput,
+  UserInput,
+  UserUpdateInput,
+];
