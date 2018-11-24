@@ -3,7 +3,11 @@ import {
   Tag, AllowedTagName, AllowedColour, TagInput,
 } from './tag';
 import {
-  Spending, SpendingInput, EditSpendingInput, DeleteSpendingInput,
+  Spending,
+  SpendingInput,
+  EditSpendingInput,
+  DeleteSpendingInput,
+  SpendingItemInput,
 } from './spending';
 
 export const Query = `
@@ -13,6 +17,7 @@ export const Query = `
     tags: [Tag]
     tag(name: AllowedTagName): Tag!
     spending(userId: String!, limit: Int): [Spending]
+    getSpendingItem(spending: SpendingItemInput!): Spending
   }
 `;
 
@@ -40,6 +45,7 @@ export const MutationSchemas = [
   SpendingInput,
   EditSpendingInput,
   DeleteSpendingInput,
+  SpendingItemInput,
   UserInput,
   UserUpdateInput,
 ];

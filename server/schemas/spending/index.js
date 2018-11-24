@@ -33,3 +33,10 @@ export const DeleteSpendingInput = `
     userId: String!
   }
 `;
+
+export const SpendingItemInput = `
+  input SpendingItemInput {
+    id: String!
+    userId: String!
+  }
+`;

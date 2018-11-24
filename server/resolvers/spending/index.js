@@ -11,6 +11,13 @@ export const SpendingResolver = {
         .limit(limit)
         .exec();
     },
+    getSpendingItem(_, { spending }) {
+      const { id, userId } = spending;
+      return Spending.findOne({
+        _id: new Mongoose.Types.ObjectId(id),
+        userId: new Mongoose.Types.ObjectId(userId),
+      });
+    },
   },
   Mutation: {
     async createSpending(_, { spending }) {
