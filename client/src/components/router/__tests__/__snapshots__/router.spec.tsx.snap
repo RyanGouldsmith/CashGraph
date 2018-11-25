@@ -125,6 +125,7 @@ Object {
             id="title"
             placeholder="Shoes"
             type="text"
+            value=""
           />
           <label
             for="price"
@@ -136,6 +137,7 @@ Object {
             min="0"
             step="0.01"
             type="number"
+            value="0.00"
           />
           <label
             for="tag"
@@ -144,6 +146,7 @@ Object {
           </label>
           <input
             id="tag"
+            value=""
           />
           <label
             for="tag-colour"
@@ -152,6 +155,7 @@ Object {
           </label>
           <input
             id="tag-colour"
+            value=""
           />
           <button
             type="submit"
@@ -190,6 +194,7 @@ Object {
           id="title"
           placeholder="Shoes"
           type="text"
+          value=""
         />
         <label
           for="price"
@@ -201,6 +206,7 @@ Object {
           min="0"
           step="0.01"
           type="number"
+          value="0.00"
         />
         <label
           for="tag"
@@ -209,6 +215,7 @@ Object {
         </label>
         <input
           id="tag"
+          value=""
         />
         <label
           for="tag-colour"
@@ -217,6 +224,7 @@ Object {
         </label>
         <input
           id="tag-colour"
+          value=""
         />
         <button
           type="submit"
@@ -224,6 +232,99 @@ Object {
           submit
         </button>
       </form>
+    </main>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Router should render the EditSpending component for path \`/spending/edit/123\` 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
+      <main
+        class="content"
+      >
+        <h1>
+          Edit Spending
+        </h1>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
+    <main
+      class="content"
+    >
+      <h1>
+        Edit Spending
+      </h1>
     </main>
   </div>,
   "debug": [Function],

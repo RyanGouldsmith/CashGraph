@@ -17,8 +17,8 @@ const mocks = [
     result: {
       data: {
         spending: [
-          { title: 'testSpendingTitle', price: 3.0 },
-          { title: 'anotherSpendingTitle', price: 7.0 },
+          { title: 'testSpendingTitle', price: 3.0, id: '123' },
+          { title: 'anotherSpendingTitle', price: 7.0, id: '123' },
         ],
       },
     },

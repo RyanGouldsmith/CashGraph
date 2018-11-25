@@ -1,7 +1,10 @@
 import React from 'react';
-import { UserProvider } from '../user/user-provider';
 import { Mutation, MutationFn, MutationResult } from 'react-apollo';
+
+import { UserProvider } from '../user/user-provider';
+
 import { SpendingMutation } from './spending-query';
+import { SpendingForm } from './spending-form';
 
 export const CreateSpending: React.SFC<{}> = () => {
   let titleRef = React.createRef<HTMLInputElement>();
@@ -36,17 +39,16 @@ export const CreateSpending: React.SFC<{}> = () => {
               {result.data ? (
                 <h1>Created successfully</h1>
               ) : (
-                <form onSubmit={submitForm(createSpending, userId)}>
-                  <label htmlFor="title">Enter the item you purchased</label>
-                  <input id="title" placeholder="Shoes" type="text" ref={titleRef} />
-                  <label htmlFor="price">The price of the item</label>
-                  <input id="price" type="number" min="0" ref={priceRef} step="0.01" />
-                  <label htmlFor="tag">Type of Tag</label>
-                  <input id="tag" ref={tagRef} />
-                  <label htmlFor="tag-colour">Tag Colour</label>
-                  <input id="tag-colour" ref={colourRef} />
-                  <button type="submit">submit</button>
-                </form>
+                <SpendingForm
+                  submitForm={submitForm}
+                  spendingCallback={createSpending}
+                  userId={userId}
+                  titleRef={titleRef}
+                  priceRef={priceRef}
+                  tagRef={tagRef}
+                  colourRef={colourRef}
+                  spendingData={{}}
+                />
               )}
             </React.Fragment>
           )}

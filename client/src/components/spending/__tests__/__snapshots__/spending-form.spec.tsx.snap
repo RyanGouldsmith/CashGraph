@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match the snapshot for the data passed into the spending form 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form>
+        <label
+          for="title"
+        >
+          Enter the item you purchased
+        </label>
+        <input
+          id="title"
+          placeholder="Shoes"
+          type="text"
+          value="knownTitle"
+        />
+        <label
+          for="price"
+        >
+          The price of the item
+        </label>
+        <input
+          id="price"
+          min="0"
+          step="0.01"
+          type="number"
+          value="10.00"
+        />
+        <label
+          for="tag"
+        >
+          Type of Tag
+        </label>
+        <input
+          id="tag"
+          value="knownTagName"
+        />
+        <label
+          for="tag-colour"
+        >
+          Tag Colour
+        </label>
+        <input
+          id="tag-colour"
+          value="knownTagColour"
+        />
+        <button
+          type="submit"
+        >
+          submit
+        </button>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form>
+      <label
+        for="title"
+      >
+        Enter the item you purchased
+      </label>
+      <input
+        id="title"
+        placeholder="Shoes"
+        type="text"
+        value="knownTitle"
+      />
+      <label
+        for="price"
+      >
+        The price of the item
+      </label>
+      <input
+        id="price"
+        min="0"
+        step="0.01"
+        type="number"
+        value="10.00"
+      />
+      <label
+        for="tag"
+      >
+        Type of Tag
+      </label>
+      <input
+        id="tag"
+        value="knownTagName"
+      />
+      <label
+        for="tag-colour"
+      >
+        Tag Colour
+      </label>
+      <input
+        id="tag-colour"
+        value="knownTagColour"
+      />
+      <button
+        type="submit"
+      >
+        submit
+      </button>
+    </form>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
