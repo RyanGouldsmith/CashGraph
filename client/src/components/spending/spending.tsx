@@ -4,6 +4,7 @@ import { SpendingType, SpendingQueryResult } from './spending-types';
 import { GetSpendingQuery } from './spending-query';
 import { UserProvider } from '../user/user-provider';
 import { Loading } from '../loading/loading';
+import { Link } from 'react-router-dom';
 
 const totalSpending = (spendings: Array<SpendingType>): number => {
   return spendings.reduce((acc, curr) => {
@@ -16,7 +17,12 @@ interface SpendingResult {
   data: SpendingQueryResult;
 }
 
-export const Spending: React.SFC<{ limit: Number }> = ({ limit }) => {
+interface SpendingProps {
+  limit?: Number;
+  shouldShowEditLink?: Boolean;
+}
+
+export const Spending: React.SFC<SpendingProps> = ({ limit, shouldShowEditLink = true }) => {
   return (
     <UserProvider.Consumer>
       {userId => (
@@ -32,9 +38,14 @@ export const Spending: React.SFC<{ limit: Number }> = ({ limit }) => {
                     <p>{`Total Spending is £${totalSpending(spending)}`}</p>
                     {spending.map((item: SpendingType) => {
                       return (
-                        <p className="spending__title" key={item.title}>
-                          {item.title}
-                        </p>
+                        <section className="spending__item">
+                          <p className="spending__item-title" key={item.title}>
+                            {item.title}
+                          </p>
+                          {shouldShowEditLink && (
+                            <Link to={`/spending/edit/${item.id}`}>Edit Spending Item</Link>
+                          )}
+                        </section>
                       );
                     })}
                   </section>

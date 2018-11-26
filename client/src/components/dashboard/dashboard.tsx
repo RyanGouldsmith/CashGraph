@@ -14,7 +14,7 @@ export const Dashboard: React.SFC<{}> = () => {
         </section>
         <section className="dashboard__spending">
           <Link to="/spending">More Spending ...</Link>
-          <Spending limit={2} />
+          <Spending limit={2} shouldShowEditLink={false} />
         </section>
       </main>
     </React.Fragment>

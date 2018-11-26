@@ -48,16 +48,24 @@ exports[`should match the snapshot containing tags and spending 1`] = `
         <p>
           Total Spending is £10
         </p>
-        <p
-          class="spending__title"
+        <section
+          class="spending__item"
         >
-          testSpendingTitle
-        </p>
-        <p
-          class="spending__title"
+          <p
+            class="spending__item-title"
+          >
+            testSpendingTitle
+          </p>
+        </section>
+        <section
+          class="spending__item"
         >
-          anotherSpendingTitle
-        </p>
+          <p
+            class="spending__item-title"
+          >
+            anotherSpendingTitle
+          </p>
+        </section>
       </section>
     </section>
   </main>
