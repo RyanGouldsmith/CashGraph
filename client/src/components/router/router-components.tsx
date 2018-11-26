@@ -9,6 +9,9 @@ export const Spending = React.lazy(() =>
 export const SpendingEdit = React.lazy(() =>
   import(/* webpackChunkName: "spending-edit" */ '../spending/edit-spending'));
 
+export const SpendingDelete = React.lazy(() =>
+  import(/* webpackChunkName: "spending-delete" */ '../spending/delete-spending'));
+
 export const Error = React.lazy(() => import(/* webpackChunkName: "error" */ '../error/error'));
 
 export const CreateSpending = React.lazy(() =>

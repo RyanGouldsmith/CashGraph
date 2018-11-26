@@ -98,3 +98,40 @@ test('should render the loading when loading data', async () => {
   const loadingNode = getByText('Loading');
   expect(loadingNode).not.toBeNull();
 });
+
+test('should render the delete link if the prop "shouldShowDeleteLink" is true', async () => {
+  const { queryByText } = render(
+    <MockedProvider mocks={mocks} addTypename={false}>
+      <UserProvider.Provider value="123">
+        <MemoryRouter>
+          <Spending limit={1} shouldShowDeleteLink={true} />
+        </MemoryRouter>
+      </UserProvider.Provider>
+    </MockedProvider>,
+  );
+
+  await wait(() => {
+    const deleteLink = queryByText('Delete Spending Item');
+
+    expect(deleteLink).not.toBeNull();
+    expect(deleteLink.getAttribute('href')).toEqual('/spending/delete/123');
+  });
+});
+
+test('should not render the delete link if the prop "shouldShowDeleteLink" is false', async () => {
+  const { queryByText } = render(
+    <MockedProvider mocks={mocks} addTypename={false}>
+      <UserProvider.Provider value="123">
+        <MemoryRouter>
+          <Spending limit={1} shouldShowDeleteLink={false} />
+        </MemoryRouter>
+      </UserProvider.Provider>
+    </MockedProvider>,
+  );
+
+  await wait(() => {
+    const deleteLink = queryByText('Delete Spending Item');
+
+    expect(deleteLink).toBeNull();
+  });
+});

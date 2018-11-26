@@ -276,6 +276,119 @@ Object {
 }
 `;
 
+exports[`Router should render the DeleteSpending component for path \`/spending/delete/123\` 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header>
+        <nav>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/spending/create"
+          >
+            Create Spending
+          </a>
+        </nav>
+      </header>
+      <main
+        class="content"
+      >
+        <h2>
+          Are you sure you want to delete this item?
+        </h2>
+        <section
+          class="spending__delete"
+        >
+          <button>
+            No, go to Dashboard
+          </button>
+          <button>
+            Yes Delete
+          </button>
+        </section>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <header>
+      <nav>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          href="/spending/create"
+        >
+          Create Spending
+        </a>
+      </nav>
+    </header>
+    <main
+      class="content"
+    >
+      <h2>
+        Are you sure you want to delete this item?
+      </h2>
+      <section
+        class="spending__delete"
+      >
+        <button>
+          No, go to Dashboard
+        </button>
+        <button>
+          Yes Delete
+        </button>
+      </section>
+    </main>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`Router should render the EditSpending component for path \`/spending/edit/123\` 1`] = `
 Object {
   "asFragment": [Function],

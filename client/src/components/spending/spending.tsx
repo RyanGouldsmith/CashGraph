@@ -20,9 +20,14 @@ interface SpendingResult {
 interface SpendingProps {
   limit?: Number;
   shouldShowEditLink?: Boolean;
+  shouldShowDeleteLink?: Boolean;
 }
 
-export const Spending: React.SFC<SpendingProps> = ({ limit, shouldShowEditLink = true }) => {
+export const Spending: React.SFC<SpendingProps> = ({
+  limit,
+  shouldShowEditLink = true,
+  shouldShowDeleteLink = true,
+}) => {
   return (
     <UserProvider.Consumer>
       {userId => (
@@ -44,6 +49,9 @@ export const Spending: React.SFC<SpendingProps> = ({ limit, shouldShowEditLink =
                           </p>
                           {shouldShowEditLink && (
                             <Link to={`/spending/edit/${item.id}`}>Edit Spending Item</Link>
+                          )}
+                          {shouldShowDeleteLink && (
+                            <Link to={`/spending/delete/${item.id}`}>Delete Spending Item</Link>
                           )}
                         </section>
                       );

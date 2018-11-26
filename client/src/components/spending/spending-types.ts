@@ -13,6 +13,10 @@ export interface SpendingItemType extends SpendingType {
   };
 }
 
+export interface DeleteSpendingResult {
+  deleteSpending: boolean;
+}
+
 export interface SpendingType {
   id: string;
   title: string;

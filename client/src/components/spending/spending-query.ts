@@ -41,6 +41,13 @@ gql`
 `;
 
 gql`
+  type DeleteSpendingInput {
+    id: String!
+    userId: String!
+  }
+`;
+
+gql`
   type EditSpendingInput {
     id: String!
     title: String
@@ -49,6 +56,7 @@ gql`
     userId: String!
   }
 `;
+
 export const SpendingMutation = gql`
   mutation CreateSpending($spending: SpendingInput!) {
     createSpending(spending: $spending) {
@@ -62,5 +70,11 @@ export const EditSpendingMutation = gql`
     editSpending(spending: $spending) {
       title
     }
+  }
+`;
+
+export const DeleteSpendingMutation = gql`
+  mutation DeleteSpendingItem($spending: DeleteSpendingInput!) {
+    deleteSpending(spending: $spending)
   }
 `;

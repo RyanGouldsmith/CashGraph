@@ -8,6 +8,7 @@ import {
   CreateSpending,
   Spending,
   SpendingEdit,
+  SpendingDelete,
   EditUser,
   Error,
 } from './router-components';
@@ -15,6 +16,7 @@ import {
 const ROUTE_FOR_DASHBOARD = '/';
 const ROUTE_FOR_SPENDING_CREATION = '/spending/create';
 const ROUTE_FOR_SPENDING_EDIT = '/spending/edit/:id';
+const ROUTE_FOR_SPENDING_DELETE = '/spending/delete/:id';
 const ROUTE_FOR_SPENDING = '/spending';
 const ROUTE_FOR_USER_EDIT = '/user/edit';
 
@@ -31,6 +33,7 @@ export const Router: React.SFC<{}> = _ => {
             <Route exact path={ROUTE_FOR_DASHBOARD} component={Dashboard} />
             <Route exact path={ROUTE_FOR_SPENDING_CREATION} component={CreateSpending} />
             <Route exact path={ROUTE_FOR_SPENDING_EDIT} component={SpendingEdit} />
+            <Route exact path={ROUTE_FOR_SPENDING_DELETE} component={SpendingDelete} />
             <Route exact path={ROUTE_FOR_SPENDING} component={Spending} />
             <Route exact path={ROUTE_FOR_USER_EDIT} component={EditUser} />
             <Route component={Error} />
