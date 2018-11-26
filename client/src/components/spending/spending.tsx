@@ -35,7 +35,7 @@ export const Spending: React.SFC<SpendingProps> = ({ limit, shouldShowEditLink =
                 const { spending } = data;
                 return (
                   <section className="spending">
-                    <p>{`Total Spending is £${totalSpending(spending)}`}</p>
+                    <p>{`Total Spending is £${totalSpending(spending).toFixed(2)}`}</p>
                     {spending.map((item: SpendingType) => {
                       return (
                         <section className="spending__item">

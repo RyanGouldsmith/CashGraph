@@ -46,7 +46,7 @@ exports[`should match the snapshot containing tags and spending 1`] = `
         class="spending"
       >
         <p>
-          Total Spending is £10
+          Total Spending is £10.00
         </p>
         <section
           class="spending__item"

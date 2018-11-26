@@ -40,7 +40,7 @@ test('should render the spending text', async () => {
   );
 
   await wait(() => {
-    const spendingTextNode = queryByText('Total Spending is £3');
+    const spendingTextNode = queryByText('Total Spending is £3.00');
     expect(spendingTextNode).not.toBeNull();
   });
 });
