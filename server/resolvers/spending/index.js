@@ -29,6 +29,7 @@ export const SpendingResolver = {
         price,
         tag,
         userId: new Mongoose.Types.ObjectId(userId),
+        createdAt: new Date(),
       });
       try {
         return await spendingItem.save();
@@ -52,7 +53,9 @@ export const SpendingResolver = {
       const {
         id, title, price, tag, userId,
       } = spending;
-      let updatedSpendingDetails = {};
+      let updatedSpendingDetails = {
+        createdAt: new Date(),
+      };
 
       if (title) {
         updatedSpendingDetails = { ...updatedSpendingDetails, title };

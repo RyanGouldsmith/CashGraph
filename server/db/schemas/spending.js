@@ -20,4 +20,5 @@ export const SpendingSchema = new Mongoose.Schema({
     type: Mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
+  createdAt: Date,
 });

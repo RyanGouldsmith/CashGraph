@@ -4,7 +4,8 @@ export const Spending = `
     title: String
     price: Float
     tag: Tag,
-    userId: String!
+    userId: String!,
+    createdAt: Date
   }
 `;
 

@@ -11,6 +11,7 @@ import {
 } from './spending';
 
 export const Query = `
+  scalar Date
   type Query {
     users: [User]
     user(id: String!): User!
