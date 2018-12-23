@@ -8,6 +8,7 @@ import {
   EditSpendingInput,
   DeleteSpendingInput,
   SpendingItemInput,
+  SpendingItemsByDateInput,
 } from './spending';
 
 export const Query = `
@@ -19,6 +20,7 @@ export const Query = `
     tag(name: AllowedTagName): Tag!
     spending(userId: String!, limit: Int): [Spending]
     getSpendingItem(spending: SpendingItemInput!): Spending
+    getSpendingItemsByDate(spending: SpendingItemsByDateInput!): [Spending]
   }
 `;
 
@@ -46,6 +48,7 @@ export const MutationSchemas = [
   SpendingInput,
   EditSpendingInput,
   DeleteSpendingInput,
+  SpendingItemsByDateInput,
   SpendingItemInput,
   UserInput,
   UserUpdateInput,

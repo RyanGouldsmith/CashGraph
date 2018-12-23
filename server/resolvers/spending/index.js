@@ -18,6 +18,16 @@ export const SpendingResolver = {
         userId: new Mongoose.Types.ObjectId(userId),
       });
     },
+    getSpendingItemsByDate(_, { spending }) {
+      const { userId, startDate, endDate } = spending;
+      return Spending.find({
+        userId: new Mongoose.Types.ObjectId(userId),
+        createdAt: {
+          $gte: new Date(startDate),
+          $lte: new Date(endDate),
+        },
+      }).exec();
+    },
   },
   Mutation: {
     async createSpending(_, { spending }) {

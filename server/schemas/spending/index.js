@@ -9,6 +9,14 @@ export const Spending = `
   }
 `;
 
+export const SpendingItemsByDateInput = `
+  input SpendingItemsByDateInput {
+    userId: String!
+    startDate: Date!
+    endDate: Date!
+  }
+`;
+
 export const SpendingInput = `
   input SpendingInput {
     title: String!
