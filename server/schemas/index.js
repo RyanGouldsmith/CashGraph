@@ -33,6 +33,7 @@ export const Mutation = `
     createUser(user: UserInput!): User
     updateUser(user: UserUpdateInput!): User
     deleteUser(id: String!): Boolean
+    deleteAllSpendingByDate(spending: SpendingItemsByDateInput!): Boolean
   }
 `;
 
