@@ -1,10 +1,17 @@
 import 'babel-polyfill';
 import React from 'react';
-import { render, cleanup, fireEvent, waitForElement, wait } from 'react-testing-library';
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitForElement,
+  wait
+} from 'react-testing-library';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { MemoryRouter, Route } from 'react-router';
 
 import { UserProvider } from '../../user/user-provider';
+import { GetTagsQuery } from '../../tags/tags-query';
 import { EditSpendingMutation, GetSpendingItem } from '../spending-query';
 import EditSpending from '../edit-spending';
 
@@ -18,18 +25,17 @@ const mocks = [
           title: 'newTitle',
           price: 10.0,
           tag: {
-            name: 'ENTERTAINMENT',
-            colour: 'RED',
+            id: '12345'
           },
-          userId: '123',
-        },
-      },
+          userId: '123'
+        }
+      }
     },
     result: {
       data: {
-        title: 'newTitle',
-      },
-    },
+        title: 'newTitle'
+      }
+    }
   },
   {
     request: {
@@ -37,9 +43,9 @@ const mocks = [
       variables: {
         spending: {
           id: '12345',
-          userId: '123',
-        },
-      },
+          userId: '123'
+        }
+      }
     },
     result: {
       data: {
@@ -47,14 +53,41 @@ const mocks = [
           title: 'testSpendingTitle',
           price: 3.0,
           id: '12345',
-          tag: {
-            name: 'HOLIDAY',
-            colour: 'BLUE',
-          },
-        },
-      },
-    },
+          tag: [
+            {
+              id: '6789',
+              name: 'HOLIDAY',
+              colour: 'BLUE'
+            }
+          ]
+        }
+      }
+    }
   },
+  {
+    request: {
+      query: GetTagsQuery,
+      variables: {
+        userId: '123'
+      }
+    },
+    result: {
+      data: {
+        tags: [
+          {
+            id: '12345',
+            name: 'ENTERTAINMENT',
+            colour: 'RED'
+          },
+          {
+            id: '6789',
+            name: 'HOLIDAY',
+            colour: 'BLUE'
+          }
+        ]
+      }
+    }
+  }
 ];
 
 afterEach(cleanup);
@@ -67,19 +100,15 @@ test('should populate the form from the query for the spending details', async (
           <Route exact path="/spending/edit/:id" component={EditSpending} />
         </UserProvider.Provider>
       </MemoryRouter>
-    </MockedProvider>,
+    </MockedProvider>
   );
 
   await wait(() => {
     const titleInput = getByLabelText('Enter the item you purchased');
     const priceInput = getByLabelText('The price of the item');
-    const tagNameInput = getByLabelText('Type of Tag');
-    const tagColourInput = getByLabelText('Tag Colour');
 
     expect(titleInput.getAttribute('value')).toEqual('testSpendingTitle');
     expect(priceInput.getAttribute('value')).toEqual('3.00');
-    expect(tagNameInput.getAttribute('value')).toEqual('HOLIDAY');
-    expect(tagColourInput.getAttribute('value')).toEqual('BLUE');
   });
 });
 
@@ -91,19 +120,17 @@ test('should edit the information and update the spending item details', async (
           <Route exact path="/spending/edit/:id" component={EditSpending} />
         </UserProvider.Provider>
       </MemoryRouter>
-    </MockedProvider>,
+    </MockedProvider>
   );
 
   await wait(async () => {
     const titleInput = getByLabelText('Enter the item you purchased');
     const priceInput = getByLabelText('The price of the item');
     const tagNameInput = getByLabelText('Type of Tag');
-    const tagColourInput = getByLabelText('Tag Colour');
 
     fireEvent.change(titleInput, { target: { value: 'newTitle' } });
     fireEvent.change(priceInput, { target: { value: 10.0 } });
-    fireEvent.change(tagNameInput, { target: { value: 'ENTERTAINMENT' } });
-    fireEvent.change(tagColourInput, { target: { value: 'RED' } });
+    fireEvent.change(tagNameInput, { target: { value: '12345' } });
     fireEvent.click(getByText('submit'));
     await waitForElement(() => getByText('Edited successfully'));
   });

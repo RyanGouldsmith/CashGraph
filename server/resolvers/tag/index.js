@@ -1,19 +1,11 @@
-const tags = [
-  {
-    name: 'HOLIDAY',
-    colour: 'GREEN',
-  },
-  {
-    name: 'ENTERTAINMENT',
-    colour: 'BLUE',
-  },
-];
+import Mongoose from 'mongoose';
+import { Tag } from '../../db/connect';
 
 export const TagResolver = {
-  tags() {
-    return tags;
+  tags(_, { userId }) {
+    return Tag.find({ userId: new Mongoose.Types.ObjectId(userId) });
   },
-  tag(_, { name }) {
-    return tags.find(tag => tag.name === name);
+  tag(_, { name, userId }) {
+    return Tag.findOne({ userId: new Mongoose.Types.ObjectId(userId), name });
   },
 };

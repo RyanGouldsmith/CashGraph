@@ -9,7 +9,7 @@ export interface SpendingItemType extends SpendingType {
     title: string;
     price: number;
     userId: string;
-    tag: TagType;
+    tag: Array<TagType>;
   };
 }
 

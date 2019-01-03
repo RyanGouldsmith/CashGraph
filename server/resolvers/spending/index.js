@@ -5,6 +5,7 @@ export const SpendingResolver = {
   Query: {
     spending(_, { userId, limit }) {
       return Spending.find({ userId: new Mongoose.Types.ObjectId(userId) })
+        .populate('tag')
         .sort({
           _id: -1,
         })
@@ -16,7 +17,7 @@ export const SpendingResolver = {
       return Spending.findOne({
         _id: new Mongoose.Types.ObjectId(id),
         userId: new Mongoose.Types.ObjectId(userId),
-      });
+      }).populate('tag');
     },
     getSpendingItemsByDate(_, { spending }) {
       const { userId, startDate, endDate } = spending;
@@ -26,7 +27,7 @@ export const SpendingResolver = {
           $gte: new Date(startDate),
           $lte: new Date(endDate),
         },
-      }).exec();
+      }).populate('tag');
     },
   },
   Mutation: {
@@ -37,7 +38,7 @@ export const SpendingResolver = {
       const spendingItem = new Spending({
         title,
         price,
-        tag,
+        tag: [new Mongoose.Types.ObjectId(tag.id)],
         userId: new Mongoose.Types.ObjectId(userId),
         createdAt: new Date(),
       });
@@ -88,7 +89,10 @@ export const SpendingResolver = {
       }
 
       if (tag) {
-        updatedSpendingDetails = { ...updatedSpendingDetails, tag };
+        updatedSpendingDetails = {
+          ...updatedSpendingDetails,
+          tag: [new Mongoose.Types.ObjectId(tag.id)],
+        };
       }
 
       return Spending.findOneAndUpdate(
@@ -100,7 +104,7 @@ export const SpendingResolver = {
         {
           new: true,
         },
-      );
+      ).populate('tag');
     },
   },
 };

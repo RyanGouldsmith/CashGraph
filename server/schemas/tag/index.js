@@ -17,6 +17,7 @@ export const AllowedColour = `
 
 export const Tag = `
   type Tag {
+    id: ID!
     name: AllowedTagName,
     colour: AllowedColour
   }
@@ -24,7 +25,6 @@ export const Tag = `
 
 export const TagInput = `
   input TagInput {
-    name: AllowedTagName,
-    colour: AllowedColour
+    id: String!
   }
 `;

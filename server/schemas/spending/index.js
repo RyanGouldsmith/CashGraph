@@ -3,7 +3,7 @@ export const Spending = `
     id: String
     title: String
     price: Float
-    tag: Tag,
+    tag: [Tag],
     userId: String!,
     createdAt: Date
   }

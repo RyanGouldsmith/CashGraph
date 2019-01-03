@@ -16,8 +16,8 @@ export const Query = `
   type Query {
     users: [User]
     user(id: String!): User!
-    tags: [Tag]
-    tag(name: AllowedTagName): Tag!
+    tags(userId: String!): [Tag]
+    tag(userId: String!, name: AllowedTagName): Tag!
     spending(userId: String!, limit: Int): [Spending]
     getSpendingItem(spending: SpendingItemInput!): Spending
     getSpendingItemsByDate(spending: SpendingItemsByDateInput!): [Spending]

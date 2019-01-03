@@ -3,19 +3,20 @@ export interface TagsQuery {
 }
 
 export interface TagType {
+  id: string;
   name: TagValues;
   colour: TagColours;
 }
 
-enum TagValues {
+export enum TagValues {
   HOLIDAY,
   FOOD,
   TRAVEL,
-  ENTERTAINMENT,
+  ENTERTAINMENT
 }
 
-enum TagColours {
+export enum TagColours {
   GREEN,
   RED,
-  BLUE,
+  BLUE
 }

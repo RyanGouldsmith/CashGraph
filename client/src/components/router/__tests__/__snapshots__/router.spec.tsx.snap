@@ -118,56 +118,7 @@ Object {
       </header>
       <main
         class="content"
-      >
-        <form>
-          <label
-            for="title"
-          >
-            Enter the item you purchased
-          </label>
-          <input
-            id="title"
-            placeholder="Shoes"
-            type="text"
-            value=""
-          />
-          <label
-            for="price"
-          >
-            The price of the item
-          </label>
-          <input
-            id="price"
-            min="0"
-            step="0.01"
-            type="number"
-            value="0.00"
-          />
-          <label
-            for="tag"
-          >
-            Type of Tag
-          </label>
-          <input
-            id="tag"
-            value=""
-          />
-          <label
-            for="tag-colour"
-          >
-            Tag Colour
-          </label>
-          <input
-            id="tag-colour"
-            value=""
-          />
-          <button
-            type="submit"
-          >
-            submit
-          </button>
-        </form>
-      </main>
+      />
     </div>
   </body>,
   "container": <div>
@@ -187,56 +138,7 @@ Object {
     </header>
     <main
       class="content"
-    >
-      <form>
-        <label
-          for="title"
-        >
-          Enter the item you purchased
-        </label>
-        <input
-          id="title"
-          placeholder="Shoes"
-          type="text"
-          value=""
-        />
-        <label
-          for="price"
-        >
-          The price of the item
-        </label>
-        <input
-          id="price"
-          min="0"
-          step="0.01"
-          type="number"
-          value="0.00"
-        />
-        <label
-          for="tag"
-        >
-          Type of Tag
-        </label>
-        <input
-          id="tag"
-          value=""
-        />
-        <label
-          for="tag-colour"
-        >
-          Tag Colour
-        </label>
-        <input
-          id="tag-colour"
-          value=""
-        />
-        <button
-          type="submit"
-        >
-          submit
-        </button>
-      </form>
-    </main>
+    />
   </div>,
   "debug": [Function],
   "getAllByAltText": [Function],

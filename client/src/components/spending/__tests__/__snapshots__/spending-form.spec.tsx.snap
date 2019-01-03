@@ -34,19 +34,20 @@ Object {
         >
           Type of Tag
         </label>
-        <input
+        <select
           id="tag"
-          value="knownTagName"
-        />
-        <label
-          for="tag-colour"
         >
-          Tag Colour
-        </label>
-        <input
-          id="tag-colour"
-          value="knownTagColour"
-        />
+          <option
+            value="123"
+          >
+            3
+          </option>
+          <option
+            value="2345"
+          >
+            1
+          </option>
+        </select>
         <button
           type="submit"
         >
@@ -85,19 +86,20 @@ Object {
       >
         Type of Tag
       </label>
-      <input
+      <select
         id="tag"
-        value="knownTagName"
-      />
-      <label
-        for="tag-colour"
       >
-        Tag Colour
-      </label>
-      <input
-        id="tag-colour"
-        value="knownTagColour"
-      />
+        <option
+          value="123"
+        >
+          3
+        </option>
+        <option
+          value="2345"
+        >
+          1
+        </option>
+      </select>
       <button
         type="submit"
       >

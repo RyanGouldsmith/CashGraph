@@ -17,6 +17,7 @@ export const GetSpendingItem = gql`
       title
       price
       tag {
+        id
         name
         colour
       }

@@ -1,8 +1,9 @@
 import gql from 'graphql-tag';
 
 export const GetTagsQuery = gql`
-  query GetTags {
-    tags {
+  query GetTags($userId: String!) {
+    tags(userId: $userId) {
+      id
       name
       colour
     }

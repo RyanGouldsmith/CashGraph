@@ -12,36 +12,39 @@ const mocks = [
   {
     request: {
       query: GetSpendingQuery,
-      variables: { limit: 2, userId: '123' },
+      variables: { limit: 2, userId: '123' }
     },
     result: {
       data: {
         spending: [
           { title: 'testSpendingTitle', price: 3.0, id: '123' },
-          { title: 'anotherSpendingTitle', price: 7.0, id: '123' },
-        ],
-      },
-    },
+          { title: 'anotherSpendingTitle', price: 7.0, id: '123' }
+        ]
+      }
+    }
   },
   {
     request: {
       query: GetTagsQuery,
+      variables: { userId: '123' }
     },
     result: {
       data: {
         tags: [
           {
+            id: '1234',
             name: 'ENTERTAINMENT',
-            colour: 'RED',
+            colour: 'RED'
           },
           {
+            id: '3456',
             name: 'TRAVEL',
-            colour: 'BLUE',
-          },
-        ],
-      },
-    },
-  },
+            colour: 'BLUE'
+          }
+        ]
+      }
+    }
+  }
 ];
 
 afterEach(cleanup);
@@ -54,7 +57,7 @@ test('should match the snapshot containing tags and spending', async () => {
           <Dashboard />
         </BrowserRouter>
       </UserProvider.Provider>
-    </MockedProvider>,
+    </MockedProvider>
   );
 
   await wait(() => {
