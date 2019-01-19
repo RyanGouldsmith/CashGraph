@@ -7,7 +7,7 @@ import { GetTagsQuery } from './tags-query';
 import { TagType } from './tags-types';
 import { Loading } from '../loading/loading';
 
-export const Tags: React.SFC<{}> = _ => {
+export const Tags: React.FunctionComponent<{}> = _ => {
   return (
     <UserProvider.Consumer>
       {userId => (

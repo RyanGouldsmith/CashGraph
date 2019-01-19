@@ -7,7 +7,7 @@ import { UserProvider } from '../user-provider';
 import { GetUserQuery } from '../user-query';
 import { UserQueryResult } from '../user-types';
 
-export const UserDetails: React.SFC<{}> = () => (
+export const UserDetails: React.FunctionComponent<{}> = () => (
   <UserProvider.Consumer>
     {(userId: String) => (
       <Query query={GetUserQuery} variables={{ userId }}>

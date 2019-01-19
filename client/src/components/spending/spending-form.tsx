@@ -18,7 +18,7 @@ interface SpendingFormProps {
   };
 }
 
-export const SpendingForm: React.SFC<SpendingFormProps> = ({
+export const SpendingForm: React.FunctionComponent<SpendingFormProps> = ({
   submitForm,
   spendingCallback,
   userId,

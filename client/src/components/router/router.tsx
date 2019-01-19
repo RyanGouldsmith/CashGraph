@@ -10,7 +10,7 @@ import {
   SpendingEdit,
   SpendingDelete,
   EditUser,
-  Error,
+  Error
 } from './router-components';
 
 const ROUTE_FOR_DASHBOARD = '/';
@@ -20,7 +20,7 @@ const ROUTE_FOR_SPENDING_DELETE = '/spending/delete/:id';
 const ROUTE_FOR_SPENDING = '/spending';
 const ROUTE_FOR_USER_EDIT = '/user/edit';
 
-export const Router: React.SFC<{}> = _ => {
+export const Router: React.FunctionComponent<{}> = _ => {
   return (
     <React.Fragment>
       <Navigation
@@ -31,9 +31,21 @@ export const Router: React.SFC<{}> = _ => {
         <React.Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path={ROUTE_FOR_DASHBOARD} component={Dashboard} />
-            <Route exact path={ROUTE_FOR_SPENDING_CREATION} component={CreateSpending} />
-            <Route exact path={ROUTE_FOR_SPENDING_EDIT} component={SpendingEdit} />
-            <Route exact path={ROUTE_FOR_SPENDING_DELETE} component={SpendingDelete} />
+            <Route
+              exact
+              path={ROUTE_FOR_SPENDING_CREATION}
+              component={CreateSpending}
+            />
+            <Route
+              exact
+              path={ROUTE_FOR_SPENDING_EDIT}
+              component={SpendingEdit}
+            />
+            <Route
+              exact
+              path={ROUTE_FOR_SPENDING_DELETE}
+              component={SpendingDelete}
+            />
             <Route exact path={ROUTE_FOR_SPENDING} component={Spending} />
             <Route exact path={ROUTE_FOR_USER_EDIT} component={EditUser} />
             <Route component={Error} />

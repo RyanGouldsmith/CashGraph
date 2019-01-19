@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Tags } from '../tags/tags';
 import { Spending } from '../spending/spending';
 
-export const Dashboard: React.SFC<{}> = () => {
+export const Dashboard: React.FunctionComponent<{}> = () => {
   return (
     <React.Fragment>
       <h1>Cash Graph Dashboard</h1>

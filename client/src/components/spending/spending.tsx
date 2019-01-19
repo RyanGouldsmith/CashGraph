@@ -23,10 +23,10 @@ interface SpendingProps {
   shouldShowDeleteLink?: Boolean;
 }
 
-export const Spending: React.SFC<SpendingProps> = ({
+export const Spending: React.FunctionComponent<SpendingProps> = ({
   limit,
   shouldShowEditLink = true,
-  shouldShowDeleteLink = true,
+  shouldShowDeleteLink = true
 }) => {
   return (
     <UserProvider.Consumer>
@@ -40,7 +40,9 @@ export const Spending: React.SFC<SpendingProps> = ({
                 const { spending } = data;
                 return (
                   <section className="spending">
-                    <p>{`Total Spending is £${totalSpending(spending).toFixed(2)}`}</p>
+                    <p>{`Total Spending is £${totalSpending(spending).toFixed(
+                      2
+                    )}`}</p>
                     {spending.map((item: SpendingType) => {
                       return (
                         <section className="spending__item">
@@ -48,10 +50,14 @@ export const Spending: React.SFC<SpendingProps> = ({
                             {item.title}
                           </p>
                           {shouldShowEditLink && (
-                            <Link to={`/spending/edit/${item.id}`}>Edit Spending Item</Link>
+                            <Link to={`/spending/edit/${item.id}`}>
+                              Edit Spending Item
+                            </Link>
                           )}
                           {shouldShowDeleteLink && (
-                            <Link to={`/spending/delete/${item.id}`}>Delete Spending Item</Link>
+                            <Link to={`/spending/delete/${item.id}`}>
+                              Delete Spending Item
+                            </Link>
                           )}
                         </section>
                       );

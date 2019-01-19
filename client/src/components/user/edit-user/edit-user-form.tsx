@@ -14,19 +14,24 @@ interface EditFormProps {
   };
 }
 
-export const EditUserForm: React.SFC<EditFormProps> = ({
+export const EditUserForm: React.FunctionComponent<EditFormProps> = ({
   submitForm,
   editUser,
   userId,
   emailRef,
   nameRef,
-  userData,
+  userData
 }) => (
   <form onSubmit={submitForm(editUser, userId)}>
     <label htmlFor="name">Edit your name</label>
     <input id="name" type="text" defaultValue={userData.name} ref={nameRef} />
     <label htmlFor="email">Edit your email</label>
-    <input id="email" type="email" defaultValue={userData.email} ref={emailRef} />
+    <input
+      id="email"
+      type="email"
+      defaultValue={userData.email}
+      ref={emailRef}
+    />
     <button type="submit">Edit Details</button>
   </form>
 );

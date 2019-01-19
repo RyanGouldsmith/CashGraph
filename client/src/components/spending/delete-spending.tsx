@@ -7,19 +7,22 @@ import { Link } from 'react-router-dom';
 import { DeleteSpendingMutation } from './spending-query';
 import { DeleteSpendingResult } from './spending-types';
 
-const SpendingDelete: React.SFC<RouteComponentProps<any>> = ({ match, history }) => {
+const SpendingDelete: React.FunctionComponent<RouteComponentProps<any>> = ({
+  match,
+  history
+}) => {
   const { id } = match.params;
 
   const goBack = () => history.push('/');
   const handleDelete = (deleteSpending: MutationFn, userId: string) => (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.stopPropagation();
     const variables = {
       spending: {
         userId,
-        id,
-      },
+        id
+      }
     };
     deleteSpending({ variables });
   };
@@ -30,7 +33,10 @@ const SpendingDelete: React.SFC<RouteComponentProps<any>> = ({ match, history })
         <React.Fragment>
           <h2>Are you sure you want to delete this item?</h2>
           <Mutation mutation={DeleteSpendingMutation}>
-            {(deleteSpending: MutationFn, result: MutationResult<DeleteSpendingResult>) => (
+            {(
+              deleteSpending: MutationFn,
+              result: MutationResult<DeleteSpendingResult>
+            ) => (
               <React.Fragment>
                 {result.data ? (
                   <React.Fragment>
@@ -40,7 +46,9 @@ const SpendingDelete: React.SFC<RouteComponentProps<any>> = ({ match, history })
                 ) : (
                   <section className="spending__delete">
                     <button onClick={goBack}>No, go to Dashboard</button>
-                    <button onClick={handleDelete(deleteSpending, userId)}>Yes Delete</button>
+                    <button onClick={handleDelete(deleteSpending, userId)}>
+                      Yes Delete
+                    </button>
                   </section>
                 )}
               </React.Fragment>

@@ -8,9 +8,9 @@ interface NavigationProps {
   routeForSpendingCreation: string;
 }
 
-export const Navigation: React.SFC<NavigationProps> = ({
+export const Navigation: React.FunctionComponent<NavigationProps> = ({
   routeForDashboard,
-  routeForSpendingCreation,
+  routeForSpendingCreation
 }) => (
   <header>
     <NavigationBar
@@ -27,5 +27,5 @@ const NavigationBar = React.memo<NavigationProps>(
       <Link to={routeForDashboard}>Home</Link>
       <Link to={routeForSpendingCreation}>Create Spending</Link>
     </nav>
-  ),
+  )
 );

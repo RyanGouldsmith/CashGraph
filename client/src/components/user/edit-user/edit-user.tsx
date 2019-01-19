@@ -7,20 +7,20 @@ import { EditUserMutation, GetUserQuery } from '../user-query';
 
 import { EditUserForm } from './edit-user-form';
 
-export const EditUser: React.SFC<{}> = () => {
+export const EditUser: React.FunctionComponent<{}> = () => {
   let emailRef = React.createRef<HTMLInputElement>();
   let nameRef = React.createRef<HTMLInputElement>();
 
   const submitForm = (mutationHandler: MutationFn, userId: String) => (
-    event: React.FormEvent<HTMLFormElement>,
+    event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
     const variables = {
       user: {
         name: nameRef.current.value,
         email: emailRef.current.value,
-        id: userId,
-      },
+        id: userId
+      }
     };
     mutationHandler({ variables });
   };

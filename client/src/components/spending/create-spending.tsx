@@ -8,7 +8,7 @@ import { Loading } from '../loading/loading';
 import { SpendingMutation } from './spending-query';
 import { SpendingForm } from './spending-form';
 
-export const CreateSpending: React.SFC<{}> = () => {
+export const CreateSpending: React.FunctionComponent<{}> = () => {
   let titleRef = React.createRef<HTMLInputElement>();
   let priceRef = React.createRef<HTMLInputElement>();
   let tagRef = React.createRef<HTMLSelectElement>();

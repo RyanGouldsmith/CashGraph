@@ -15,7 +15,9 @@ interface SpendingItemResult {
   data: SpendingItemType;
 }
 
-const EditSpending: React.SFC<RouteComponentProps<any>> = ({ match }) => {
+const EditSpending: React.FunctionComponent<RouteComponentProps<any>> = ({
+  match
+}) => {
   let titleRef = React.createRef<HTMLInputElement>();
   let priceRef = React.createRef<HTMLInputElement>();
   let tagRef = React.createRef<HTMLSelectElement>();
