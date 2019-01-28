@@ -10,10 +10,10 @@ import { EditSpendingMutation, GetSpendingItem } from './spending-query';
 import { SpendingItemType } from './spending-types';
 import { SpendingForm } from './spending-form';
 
-interface SpendingItemResult {
+type SpendingItemResult = {
   loading: boolean;
   data: SpendingItemType;
-}
+};
 
 const EditSpending: React.FunctionComponent<RouteComponentProps<any>> = ({
   match

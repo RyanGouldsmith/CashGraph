@@ -3,7 +3,7 @@ import { MutationFn } from 'react-apollo';
 
 import { TagType } from '../tags/tags-types';
 
-interface SpendingFormProps {
+type SpendingFormProps = {
   submitForm: Function;
   spendingCallback: MutationFn;
   userId: String;
@@ -16,7 +16,7 @@ interface SpendingFormProps {
     tags?: Array<TagType>;
     selectedTag?: string;
   };
-}
+};
 
 export const SpendingForm: React.FunctionComponent<SpendingFormProps> = ({
   submitForm,

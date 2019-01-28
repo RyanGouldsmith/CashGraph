@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { UserDetails } from '../user/user-details/user-details';
 
-interface NavigationProps {
+type NavigationProps = {
   routeForDashboard: string;
   routeForSpendingCreation: string;
-}
+};
 
 export const Navigation: React.FunctionComponent<NavigationProps> = ({
   routeForDashboard,

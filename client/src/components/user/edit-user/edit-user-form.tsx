@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MutationFn } from 'react-apollo';
 
-interface EditFormProps {
+type EditFormProps = {
   submitForm: Function;
   editUser: MutationFn;
   userId: String;
@@ -12,7 +12,7 @@ interface EditFormProps {
     name: string;
     email: string;
   };
-}
+};
 
 export const EditUserForm: React.FunctionComponent<EditFormProps> = ({
   submitForm,

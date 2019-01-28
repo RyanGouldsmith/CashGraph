@@ -12,16 +12,16 @@ const totalSpending = (spendings: Array<SpendingType>): number => {
   }, 0.0);
 };
 
-interface SpendingResult {
+type SpendingResult = {
   loading: boolean;
   data: SpendingQueryResult;
-}
+};
 
-interface SpendingProps {
+type SpendingProps = {
   limit?: Number;
   shouldShowEditLink?: Boolean;
   shouldShowDeleteLink?: Boolean;
-}
+};
 
 export const Spending: React.FunctionComponent<SpendingProps> = ({
   limit,
