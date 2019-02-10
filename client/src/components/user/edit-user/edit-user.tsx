@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { UserProvider } from '../user-provider';
 import { Query, Mutation, MutationFn, MutationResult } from 'react-apollo';
 import { UserQueryResult } from '../user-types';
@@ -8,8 +8,8 @@ import { EditUserMutation, GetUserQuery } from '../user-query';
 import { EditUserForm } from './edit-user-form';
 
 export const EditUser: React.FunctionComponent<{}> = () => {
-  let emailRef = React.createRef<HTMLInputElement>();
-  let nameRef = React.createRef<HTMLInputElement>();
+  let emailRef = useRef<HTMLInputElement>(null);
+  let nameRef = useRef<HTMLInputElement>(null);
 
   const submitForm = (mutationHandler: MutationFn, userId: String) => (
     event: React.FormEvent<HTMLFormElement>

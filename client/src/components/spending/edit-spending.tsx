@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { UserProvider } from '../user/user-provider';
 import { Mutation, MutationFn, MutationResult, Query } from 'react-apollo';
 import { withRouter, RouteComponentProps } from 'react-router';
@@ -18,9 +18,9 @@ type SpendingItemResult = {
 const EditSpending: React.FunctionComponent<RouteComponentProps<any>> = ({
   match
 }) => {
-  let titleRef = React.createRef<HTMLInputElement>();
-  let priceRef = React.createRef<HTMLInputElement>();
-  let tagRef = React.createRef<HTMLSelectElement>();
+  let titleRef = useRef<HTMLInputElement>(null);
+  let priceRef = useRef<HTMLInputElement>(null);
+  let tagRef = useRef<HTMLSelectElement>(null);
   const id = match.params.id;
 
   const submitForm = (mutationHandler: MutationFn, userId: String) => (

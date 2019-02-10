@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Mutation, MutationFn, MutationResult, Query } from 'react-apollo';
 
 import { UserProvider } from '../user/user-provider';
@@ -9,9 +9,9 @@ import { SpendingMutation } from './spending-query';
 import { SpendingForm } from './spending-form';
 
 export const CreateSpending: React.FunctionComponent<{}> = () => {
-  let titleRef = React.createRef<HTMLInputElement>();
-  let priceRef = React.createRef<HTMLInputElement>();
-  let tagRef = React.createRef<HTMLSelectElement>();
+  let titleRef = useRef<HTMLInputElement>(null);
+  let priceRef = useRef<HTMLInputElement>(null);
+  let tagRef = useRef<HTMLSelectElement>(null);
 
   const submitForm = (mutationHandler: MutationFn, userId: String) => (
     event: React.FormEvent<HTMLFormElement>
